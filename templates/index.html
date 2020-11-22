@@ -1,16 +1,13 @@
-{% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
-
-{% block title %}Flasky{% endblock %}
-
-{% block page_content %}
-<div class="page-header">
-    <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
-    {% if not known %}
-    <p>Pleased to meet you!</p>
-    {% else %}
-    <p>Happy to see you again!</p>
-    {% endif %}
-</div>
-{{ wtf.quick_form(form) }}
-{% endblock %}
+<!doctype html>
+<html>
+<head>
+    <title>NetPets</title>
+</head>
+<body>
+    <ul id="ing">
+		{% for pet in pets %}
+		<li><img src={{pet.pet_picture}}>{{pet.pet_name}} {{pet.pet_species}}</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>
