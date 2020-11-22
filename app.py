@@ -8,6 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
 from flask import redirect
 from flask import request
+from forms import addPet
 
 app = Flask(__name__)
 application = app
