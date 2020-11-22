@@ -46,7 +46,7 @@ def internal_server_error(e):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     pet = None
-    form = newPetForm()
+    form = petForm()
     if form.validate_on_submit():
         species = form.species.data
         picture = form.picture.data
