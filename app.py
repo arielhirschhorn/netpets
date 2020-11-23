@@ -1,15 +1,12 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request, url_for
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_wtf import FlaskForm
-# from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
-from flask_wtf.file import FileField, FileRequired, FileAllowed
-from wtforms import StringField, SubmitField, HiddenField, FileField
+from wtforms import StringField, SubmitField, HiddenField
 from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
-from flask import redirect
-from flask import request
+import os
 
 
 
@@ -17,7 +14,7 @@ app = Flask(__name__)
 application = app
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pets.db'
-app.config['UPLOADED_PHOTOS_DEST'] = os.getcwd() + '/uploads'
+app.config["IMAGE_UPLOADS"] = 'uploads'
 
 
 bootstrap = Bootstrap(app)
@@ -37,7 +34,7 @@ class Pets(db.Model):
 class petForm(FlaskForm):
     name= StringField('Enter a new name')
     species = StringField('Enter a new species')
-    picture = FileField('Upload image')
+    # picture = FileField('Upload image')
     submit = SubmitField('Submit new pet')
 
 @app.errorhandler(404)
@@ -50,31 +47,62 @@ def internal_server_error(e):
     return render_template('500.html'), 500
 
 
-@app.route('/', methods=['GET', 'POST'])
-def submit():
+@app.route('/')
+def index():
+    return render_template('addPet.html')
+
+
+@app.route('/', methods=['POST', 'GET'])
+def upload_file():
     pet = None
-    form = petForm()
-    if form.validate_on_submit():
-        species = form.species.data
-        picture = picture.save(form.picture.data)
-        filename = picture.url(filename)
-        saved_picture.save(os.path.join(app.config['UPLOAD_PATH'], picture)) 
-        name = form.name.data
-        new_pet = Pets(species=species, filename=filename,name=name)
-        try:
-            db.session.add(new_pet)
-            db.session.commit()
-            return redirect('/petlist')
-        except:
-            return "error"
-        form.species.data = ''
-        form.name.data = ''
-        form.picture.data = ''
+    uploaded_file = request.files['file']
+    if request.method == "POST":
+        if uploaded_file.filename != '':
+            uploaded_file.save(os.path.join(app.config["IMAGE_UPLOADS"], uploaded_file.filename))
+            species = request.form['species']
+            name = request.form['petname']
+            filename = uploaded_file.filename
+            new_pet = Pets(species=species, filename=filename,name=name)
+            try:
+                db.session.add(new_pet)
+                db.session.commit()
+                return redirect(url_for('petlist'))
+            except:
+                print(species)
+                print(name)
+                print(filename)
+                return "error"
+        # form.species.data = ''
+        # form.name.data = ''
+        # form.filename.data = ''
     pets = Pets.query.order_by(Pets.id)
-    return render_template('addPet.html', form=form,pets=pets)
+    return redirect(url_for('index'))
 
 
-@app.route('/petlist', methods=['GET', 'POST'])
+# def submit():
+#     pet = None
+#     form = petForm()
+#     if form.validate_on_submit():
+#         species = form.species.data
+#         picture = picture.save(form.picture.data)
+#         filename = picture.url(filename)
+#         saved_picture.save(os.path.join(app.config['UPLOAD_PATH'], picture)) 
+#         name = form.name.data
+#         new_pet = Pets(species=species, filename=filename,name=name)
+#         try:
+#             db.session.add(new_pet)
+#             db.session.commit()
+#             return redirect('/petlist')
+#         except:
+#             return "error"
+#         form.species.data = ''
+#         form.name.data = ''
+#         form.picture.data = ''
+#     pets = Pets.query.order_by(Pets.id)
+#     return render_template('addPet.html', form=form,pets=pets)
+
+
+@app.route('/petlist')
 def petlist():
     pets = Pets.query.order_by(Pets.id)
     return render_template('index.html', pets=pets)

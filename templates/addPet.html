@@ -4,20 +4,15 @@
     <title>NetPets - add a pet!</title>
 </head>
 <body>
-    <form action="/" method="POST">
-		{{form.name.label}}
-		{{form.name}}
-		<br>
-		<br>
-		{{form.picture.label}}
-		{{form.picture}}
-		<br>
-		<br>
-		{{form.species.label}}
-		{{form.species}}
-		<br>
-		<br>
-		{{form.submit}}
+    <form method="POST" name="form" action="" enctype="multipart/form-data">
+	  <p><input type="file" name="file"></p>
+	  <p><input type= "text" name="petname"></p>
+	  <label for="petname">Pet name</label>
+	  <p><input type="text" name="species" ></p>
+	  <label for="species">Species</label>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+
 	</form>
 
 </body>
