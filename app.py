@@ -14,7 +14,7 @@ app = Flask(__name__)
 application = app
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pets.db'
-app.config["IMAGE_UPLOADS"] = 'uploads'
+app.config["IMAGE_UPLOADS"] = 'static/uploads'
 
 
 bootstrap = Bootstrap(app)
