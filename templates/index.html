@@ -6,7 +6,7 @@
 <body>
     <ul id="ing">
 		{% for pet in pets %}
-		<li><img src={{pet.pet_picture}}>{{pet.pet_name}} {{pet.pet_species}}</li>
+		<li><img src=uploads/{{pet.filename}}>{{pet.name}} {{pet.species}}</li>
 		{% endfor %}
 	</ul>
 </body>

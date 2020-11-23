@@ -4,15 +4,20 @@
     <title>NetPets - add a pet!</title>
 </head>
 <body>
-    <form action="" method="POST">
-		{{add.csrf_token}}
-		{{add.pet_name.label}}
-		{{add.pet_name}}
-		{{add.pet_picture.label}}
-		{{add.pet_picture}}
-		{{add.pet_species.label}}
-		{{add.pet_species}}
-		{{add.submit}}
+    <form action="/" method="POST">
+		{{form.name.label}}
+		{{form.name}}
+		<br>
+		<br>
+		{{form.picture.label}}
+		{{form.picture}}
+		<br>
+		<br>
+		{{form.species.label}}
+		{{form.species}}
+		<br>
+		<br>
+		{{form.submit}}
 	</form>
 
 </body>
