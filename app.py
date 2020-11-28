@@ -64,3 +64,19 @@ def index():
         form.picture.data = ''
     pets = Pets.query.order_by(Pets.id)
     return render_template('index.html', form=form,pets=pets)
+
+
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+       return render_template('addPet.html')
+
+
+@app.route('/delete/<int:id>')
+def delete(id):
+   ingredient_to_delete = db.query.get_or_404(id)
+   try:
+       db.session.delete(ingredient_to_delete)
+       db.session.commit()
+       return redirect('/')
+   except:
+       return "There was an error deleting that ingredient."
