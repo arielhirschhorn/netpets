@@ -11,16 +11,16 @@
     <title>NetPets - add a pet!</title>
 </head>
 <body>
-    <form action="" method="POST">
-		{{add.csrf_token}}
-		{{add.pet_name.label}}
-		{{add.pet_name}}
-		{{add.pet_picture.label}}
-		{{add.pet_picture}}
-		{{add.pet_species.label}}
-		{{add.pet_species}}
-		{{add.submit}}
-	</form>
+    <h1> Add a pet: <h1>
+    <form method="POST" name="form" action="" enctype="multipart/form-data">
+	  <p><input type="file" name="file"></p>
+	  <p><input type= "text" name="petname"></p>
+	  <label for="petname">Pet name</label>
+	  <p><input type="text" name="species" ></p>
+	  <label for="species">Species</label>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+    <p> To see all pets in the database, click <a href="/petlist">here.</a></p>
 
 </body>
 </html>
