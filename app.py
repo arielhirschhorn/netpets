@@ -6,15 +6,9 @@ from wtforms import StringField, SubmitField, HiddenField
 from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
-<<<<<<< HEAD
-from flask import redirect
-from flask import request
-from forms import addPet
-=======
 import os
 
 
->>>>>>> 8a7f0e9ad0bab58e6c9dcca0b88454c8ee6c507e
 
 app = Flask(__name__)
 application = app
@@ -55,10 +49,14 @@ def internal_server_error(e):
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+    
+@app.route('/addPet')
+def petList():
     return render_template('addPet.html')
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/addPet', methods=['POST', 'GET'])
 def upload_file():
     pet = None
     uploaded_file = request.files['file']
@@ -111,24 +109,4 @@ def upload_file():
 @app.route('/petlist')
 def petlist():
     pets = Pets.query.order_by(Pets.id)
-<<<<<<< HEAD
-    return render_template('index.html', form=form,pets=pets)
-
-
-@app.route('/update/<int:id>', methods=['GET', 'POST'])
-def update(id):
-       return render_template('addPet.html')
-
-
-@app.route('/delete/<int:id>')
-def delete(id):
-   ingredient_to_delete = db.query.get_or_404(id)
-   try:
-       db.session.delete(ingredient_to_delete)
-       db.session.commit()
-       return redirect('/')
-   except:
-       return "There was an error deleting that ingredient."
-=======
-    return render_template('index.html', pets=pets)
->>>>>>> 8a7f0e9ad0bab58e6c9dcca0b88454c8ee6c507e
+    return render_template('petList.html', pets=pets)
