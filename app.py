@@ -49,14 +49,10 @@ def internal_server_error(e):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-    
-@app.route('/addPet')
-def petList():
     return render_template('addPet.html')
 
 
-@app.route('/addPet', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def upload_file():
     pet = None
     uploaded_file = request.files['file']
@@ -109,4 +105,4 @@ def upload_file():
 @app.route('/petlist')
 def petlist():
     pets = Pets.query.order_by(Pets.id)
-    return render_template('petList.html', pets=pets)
+    return render_template('index.html', pets=pets)
