@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}NetPets{% endblock %}
+
+{% block page_content %}
+
+<!doctype html>
+<html>
+<head>
+    <title>NetPets</title>
+</head>
+
+<body>
+	<h1> Index! Here are the pets: </h1>
+    <ul id="ing">
+		{% for pet in pets %}
+		<li>
+			<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}"width="50%" height="50%">
+			<br>
+			{{pet.name}} 
+			<br>
+			{{pet.species}}</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>
+	
+{% endblock  %}
