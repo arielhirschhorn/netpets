@@ -5,14 +5,69 @@
 
 {% block page_content %}
 
-<!doctype html>
-<html>
-<head>
-    <title>NetPets</title>
-</head>
-
 <body>
-	<h1> Welcome to NetPets! </h1>
+	<section id="image-header">
+		<h1> Improve your life - find your perfect pet. </h1>
+		<ul>
+			<li> <a href="/"> Dogs </a> </li>
+			<li> <a href="/"> Cats </a> </li>
+			<li> <a href="/"> Birds </a> </li>
+			<li> <a href="/"> Fish </a> </li>
+			<li> <a href="/"> Lizards </a> </li>
+		</ul>
+	</section>
+	<section id="previews">
+		<h2> {/{petcount}/}+ Pets In Need of Adoption: </h2>
+		<ul>
+			{% for pet in previews %}
+			<li>
+				<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}"width="50%" height="50%">
+				<br>
+				{{pet.name}} 
+				<br>
+				{{pet.species}}
+			</li>
+			{% endfor %}
+			<li> <a href="/"> + </a> </li>
+			
+		</ul>
+	</section>
+	<section id="instructions">
+		<h2> Planning to Adopt? </h2>
+		<ul>
+			<li>
+				<img src="/">
+				<h3> General Adoption Checklist </h3>
+				<p> A short description of what this page is! </p>
+			</li>
+			<li>
+				<img src="/">
+				<h3> Dog Care Guide </h3>
+				<p> A short description of what this page is! </p>
+			</li>
+			<li>
+				<img src="/">
+				<h3> Cat Care Guide </h3>
+				<p> A short description of what this page is! </p>
+			</li>
+			<li>
+				<img src="/">
+				<h3> Bird Care Guide </h3>
+				<p> A short description of what this page is! </p>
+			</li>
+			<li>
+				<img src="/">
+				<h3> Fish Care Guide </h3>
+				<p> A short description of what this page is! </p>
+			</li>
+			<li>
+				<img src="/">
+				<h3> Lizard Care Guide </h3>
+				<p> A short description of what this page is! </p>
+			</li>
+		</ul>
+	</section>
+	
 </body>
 </html>
 	

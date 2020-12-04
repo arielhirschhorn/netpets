@@ -49,7 +49,11 @@ def internal_server_error(e):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    #I'm sure there's a more efficient way to do it than loading the entire list 
+    #and then trimming it, but I just needed to get something working so I could work on styling it
+    pets = Pets.query.order_by(Pets.id)
+    previews = pets[:4]
+    return render_template('index.html', previews=previews)
     
 @app.route('/addPet')
 def petList():
@@ -110,3 +114,9 @@ def upload_file():
 def petlist():
     pets = Pets.query.order_by(Pets.id)
     return render_template('petList.html', pets=pets)
+    
+@app.route('/petview')
+def viewpet():
+    pet_id = request.args.get('id')
+    pets = Pets.query.filter(Pets.id == pet_id)
+    return render_template('petview.html', pet=pets[0])

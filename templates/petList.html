@@ -12,15 +12,42 @@
 </head>
 
 <body>
-	<h1> Index! Here are the pets: </h1>
+	<form method="POST" name="form" action="" enctype="multipart/form-data">
+		<label for="species"> Species: </label>
+		<select name="species">
+			<option value="dog"> Dog </option>
+			<option value="cat"> Cat </option>
+			<option value="bird"> Bird </option>
+			<option value="Fish"> Fish </option>
+			<option value="Lizard"> Lizard </option>
+		</select>
+		<label for="age"> Age: </label>
+		<select name="age">
+			<option value="any"> Any </option>
+			<option value="baby"> Baby </option>
+			<option value="young"> Young </option>
+			<option value="adult"> Adult </option>
+			<option value="old"> Old </option>
+		</select>
+		<input type="checkbox" name="male">
+		<label for="male"> Male </label>
+		<input type="checkbox" name="female">
+		<label for="child"> Female </label>
+		<input type="checkbox" name="child">
+		<label for="child"> Child Friendly Required </label>
+		<input type="checkbox" name="other-pet">
+		<label for="other-pet"> Other Pet Friendly Required </label>
+		<input type="submit" name="submit" value="Search">
+	</form>
     <ul id="ing">
 		{% for pet in pets %}
-		<li>
+		<li> <a href="/petview?id={{pet.id}}">
 			<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}"width="50%" height="50%">
 			<br>
 			{{pet.name}} 
 			<br>
-			{{pet.species}}</li>
+			{{pet.species}}
+		</a></li>
 		{% endfor %}
 	</ul>
 </body>
