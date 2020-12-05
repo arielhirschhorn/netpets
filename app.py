@@ -6,15 +6,12 @@ from wtforms import StringField, SubmitField, HiddenField
 from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
-<<<<<<< HEAD
 from flask import redirect
 from flask import request
-from forms import addPet
-=======
+#from forms import addPet
 import os
 
 
->>>>>>> 8a7f0e9ad0bab58e6c9dcca0b88454c8ee6c507e
 
 app = Flask(__name__)
 application = app
@@ -40,8 +37,8 @@ class Pets(db.Model):
 class petForm(FlaskForm):
     name= StringField('Enter a new name')
     species = StringField('Enter a new species')
-    # picture = FileField('Upload image')
-    submit = SubmitField('Submit new pet')
+    #picture = FileField('Upload image')
+    #submit = SubmitField('Submit new pet')
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -111,8 +108,7 @@ def upload_file():
 @app.route('/petlist')
 def petlist():
     pets = Pets.query.order_by(Pets.id)
-<<<<<<< HEAD
-    return render_template('index.html', form=form,pets=pets)
+    return render_template('index.html', form=addPet,pets=pets)
 
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
@@ -128,7 +124,5 @@ def delete(id):
        db.session.commit()
        return redirect('/')
    except:
-       return "There was an error deleting that ingredient."
-=======
-    return render_template('index.html', pets=pets)
->>>>>>> 8a7f0e9ad0bab58e6c9dcca0b88454c8ee6c507e
+       #return "There was an error deleting that ingredient."
+       return render_template('index.html', pets=pets)
