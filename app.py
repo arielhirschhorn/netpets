@@ -88,9 +88,7 @@ def upload_file():
             vaccinated = request.form['vaccinated']
             kidFriendly = request.form['kidFriendly']
             petFriendly = request.form['petFriendly']
-            status = request.form['status']
             description = request.form['description']
-            dateAdded = request.form['dateAdded']
             new_pet = Pets(species=species, filename=filename,name=name,breed=breed,age=age,sex=sex,
                 makeBabies=makeBabies,vaccinated=vaccinated,kidFriendly=kidFriendly,petFriendly=petFriendly,
                 status=0,description=description,dateAdded=date.today())
