@@ -18,29 +18,44 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">NetPets!</a>
+            <a class="navbar-brand" href="/">NetPets</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/petlist">Pet list</a></li>
             </ul>
-            {% if current_user.is_anonymous %}
-            <ul class="nav navbar-nav">
-                <li><a href="/register/">Register</a></li>
-            </ul>
-                <ul class="nav navbar-nav">
-                <li><a href="/login">Login</a></li>
-            </ul>
-                {% else %}    
-            <ul class="nav navbar-nav">
-                <li><a href="/logout">Logout {{current_user.username}}</a></li>
-            </ul>
             {% if current_user.admin == True %}
-            <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">
                 <li><a href="/addPet">Add pets</a></li>
-            </ul>
+                </ul>
             {% endif %}
-        {% endif %}
+
+
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href = '#' class="dropdown-toggle" data-toggle = "dropdown">
+                        <!-- <img src = "walter.ico"> -->
+                        Account <b class= "caret"></b>
+                    </a>
+                    <ul class = "dropdown-menu">
+                        {% if current_user.is_anonymous %}
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="/register/">Register</a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="/login">Login</a></li>
+                                    </ul>
+                                    {% else %}    
+                            <ul class="nav navbar-nav">
+                            <li><a href="/logout">Logout {{current_user.username}}</a></li>
+                            </ul>
+
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
 
             
         </div>
@@ -61,7 +76,7 @@
 </div>
 {% block footer %}
 <div class="container">
-<p>Made for CSC 210 by Adi Tangirala, Ariel Hirschhorn, Ella Apykhtin, and Katie Karabetsos.</p>
+<p>Made with ❤ for CSC 210 by Adi Tangirala, Ariel Hirschhorn, Ella Apykhtin, and Katie Karabetsos.</p>
 </div>
 {% endblock %}
 {% endblock %}
