@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import Flask, render_template, redirect, request, url_for, flash
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -29,10 +30,22 @@ login = LoginManager(app)
 class Pets(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False)
-    species = db.Column(db.String(200), nullable=False)
+    species = db.Column(db.Integer, nullable=False) #0=dog, 1=cat, 2= Small mammals, 3 =Birds 4 = Reptiles 5 = fish, 6 = other
     filename = db.Column(db.String(200), nullable=False)
+    breed = db.Column(db.String(200), nullable=False)
+    age = db.Column(db.Integer, nullable = False) #0 = baby, 1= young adult, 2 = adult, 3 = elder
+    sex = db.Column(db.Integer, nullable = False) #0 = m, 1 = f, 2 = unknown
+    makeBabies = db.Column(db.Boolean, nullable = False) #0 = not spayed/nutered 1 = spayed/nutered
+    vaccinated = db.Column(db.Boolean, nullable = False) #0 = not 1 = is
+    kidFriendly = db.Column(db.Boolean, nullable=False)
+    petFriendly = db.Column(db.Boolean, nullable=False)
+    status = db.Column(db.Boolean, nullable = False) #0 = availible 1 = adopted
+    description = db.Column(db.String, nullable=False)
+    dateAdded = db.Column(db.Date, nullable = False)
     def __repr__(self):
         return 'Pet %r' % self.id
+
+
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
@@ -160,10 +173,65 @@ def upload_file():
         if uploaded_file.filename != '':
             uploaded_file.save(os.path.join(app.config["IMAGE_UPLOADS"], uploaded_file.filename))
             species = request.form['species']
+            if species == "0":
+                species = 0
+            if species == "1":
+                species = 1
+            if species == "2":
+                species = 2
+            if species == "3":
+                species = 3
+            if species == "4":
+                species = 4
+            if species == "5":
+                species = 5
+            if species == "6":
+                species = 6
             name = request.form['petname']
-            age = int(request.form['age'])
             filename = uploaded_file.filename
-            new_pet = Pets(species=species, age=age, filename=filename,name=name)
+            breed = request.form['breed']
+            age = request.form['age']
+            if age == "0":
+                age = 0
+            if age == "1":
+                age = 1
+            if age == "2":
+                age = 2
+            if age == "3":
+                age = 3
+            sex = request.form['sex']
+            if sex == "0":
+                sex = 0
+            if sex == "1":
+                sex = 1
+            if sex == "2":
+                sex = 2
+            makeBabies = request.form['makeBabies']
+            if makeBabies == "True":
+                makeBabies = True
+            if makeBabies == "False":
+                makeBabies = False
+            vaccinated = request.form['vaccinated']
+            if vaccinated == "True":
+                vaccinated = True
+            if vaccinated == "False":
+                vaccinated = False
+            kidFriendly = request.form['kidFriendly']
+            if kidFriendly == "True":
+                kidFriendly = True
+            if kidFriendly == "False":
+                kidFriendly = False
+            petFriendly = request.form['petFriendly']
+            if petFriendly == "True":
+                petFriendly = True
+            if petFriendly == "False":
+                petFriendly = False
+            description = request.form['description']
+            status=True
+            dateAdded = date.today()
+            new_pet = Pets(species=species, filename=filename,name=name,breed=breed,age=age,sex=sex,
+                makeBabies=makeBabies,vaccinated=vaccinated,kidFriendly=kidFriendly,petFriendly=petFriendly,
+                status=status,description=description,dateAdded=dateAdded)
             try:
                 db.session.add(new_pet)
                 db.session.commit()
@@ -172,9 +240,23 @@ def upload_file():
                 print(species)
                 print(name)
                 print(filename)
+                print(breed)
+                print(age)
+                print(sex)
+                print(makeBabies)
+                print(vaccinated)
+                print(kidFriendly)
+                print(petFriendly)
+                print(description)
+                print(status)
+                print(dateAdded)
                 return "error"
+        # form.species.data = ''
+        # form.name.data = ''
+        # form.filename.data = ''
     pets = Pets.query.order_by(Pets.id)
     return redirect(url_for('index'))
+
 
 @app.route('/petlist')
 def petlist():
@@ -186,3 +268,5 @@ def viewpet():
     pet_id = request.args.get('id')
     pets = Pets.query.filter(Pets.id == pet_id)
     return render_template('petview.html', pet=pets[0])
+
+
