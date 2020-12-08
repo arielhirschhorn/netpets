@@ -3,48 +3,37 @@
 
 
 {% block content %}
-
-<h2> Sign up </h2>
-<form action = "" method = "POST">
-{{ form.hidden_tag() }}
-
-    <br>
-
-    <p>
-        {{form.username.label}} <br>
-        {{form.username(size=30)}}
-        {% if form.username.errors %}
-            <ul class = "errors">{% for error in form.username.errors %}<li>{{ error }}</li>{% endfor %} </ul>
-        {% endif %}
-    </p>
-
-    <p>
-        {{form.password.label}} <br>
-        {{form.password(size=30)}}
-        {% if form.password.errors %}
-            <ul class="errors">{% for error in form.password.errors %}<li>{{ error }}</li>{% endfor %} </ul>
-        {% endif %}
-    </p>
-
-    <p>
-        {{form.confirm.label}} <br>
-        {{form.confirm(size=30)}}
-    </p>
-
-    <p>
-        {{form.serving.label}} <br>
-        {{form.serving(size=30)}}
-        {% if form.serving.errors %}
-            <ul class="errors">{% for error in form.serving.errors %}<li>{{ error }}</li>{% endfor %} </ul>
-        {% endif %}
-    </p>
-
-    <p>
+    <h1>Register</h1>
+    <form action="" method="post">
         {{ form.hidden_tag() }}
-        {{form.submit()}} <br>
-    </p>
-    
-</form>
-
-
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=64) }}<br>
+            {% for error in form.email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=32) }}<br>
+            {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
 {% endblock %}
