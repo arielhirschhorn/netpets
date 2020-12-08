@@ -54,10 +54,10 @@ class User(UserMixin, db.Model):
 
 
 ##Forms
-class petForm(FlaskForm):
-    name= StringField('Enter a new name')
-    species = StringField('Enter a new species')
-    submit = SubmitField('Submit new pet')
+#class petForm(FlaskForm):
+#    name= StringField('Enter a new name')
+#    species = StringField('Enter a new species')
+#    submit = SubmitField('Submit new pet')
 
 
 class LoginForm(FlaskForm):
@@ -186,3 +186,8 @@ def viewpet():
     pet_id = request.args.get('id')
     pets = Pets.query.filter(Pets.id == pet_id)
     return render_template('petview.html', pet=pets[0])
+
+
+@app.route('/adoptdog')
+def adoptdog():
+   return render_template('adoptdog.html')

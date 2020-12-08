@@ -9,20 +9,23 @@
 	<section id="image-header">
 		<h1> <center>Improve your life - find your perfect pet.</center> </h1>
 		<center>
-			<table>
+			<div style="padding-right: 80px; padding-left: 80px;">
+			<table cellpadding="10">
 				<tr><a href="/"> Dogs </a> </tr>
 				<tr><a href="/"> Cats </a></tr>
 				<tr><a href="/"> Birds </a></tr>
 				<tr><a href="/"> Fish </a></tr>
 				<tr><a href="/"> Lizards </a></tr>
 			</table>
+
+			</div>
 		</center>
 	</section>
 
 
 
 	<section id="previews">
-		<h2>There are {/{petcount}/}+ pets ready to find a new home!</h2>
+		<h3>There are {/{petcount}/}+ pets ready to find a new home!</h3>
 		<ul>
 			{% for pet in previews %}
 			<li>
@@ -38,7 +41,10 @@
 		</ul>
 	</section>
 	<section id="instructions">
-		<h2> Planning to Adopt? </h2>
+		<h3> Planning to Adopt? </h3>
+		<p>
+			Check out our adoption guides up top!
+		</p>
 		<ul>
 			<li>
 				<img src="/">

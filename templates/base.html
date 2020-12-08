@@ -1,6 +1,6 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %}Flasky{% endblock %}
+{% block title %}NetPets{% endblock %}
 
 {% block head %}
 {{ super() }}
@@ -22,7 +22,23 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/petlist">Pet list</a></li>
+                <li><a href="/petlist">Pet List</a></li>
+            </ul>
+            <ul class = "nav navbar-nav">
+                <li class = "dropdown">
+                    <a href = '#' class="dropdown-toggle" data-toggle = "dropdown">
+                        <!-- <img src = "walter.ico"> -->
+                        Adoption Guides <b class= "caret"></b>
+                    </a>
+                    <ul class = "dropdown-menu">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="/adoptdog">Dogs</a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="/login">Login</a></li>
+                                    </ul>
+                    </ul>
+                </li> 
             </ul>
             {% if current_user.admin == True %}
                 <ul class="nav navbar-nav">
@@ -64,22 +80,27 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    {% for message in get_flashed_messages() %}
-    <div class="alert alert-warning">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        {{ message }}
-    </div>
-    {% endfor %}
+    <div class="container">
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+        {% endfor %}
 
-    {% block page_content %}{% endblock %}
-</div>
-{% block footer %}
-<hr class="solid">
-<div class="container">
-<p>Made with ❤ for CSC 210 by Adi Tangirala, Ariel Hirschhorn, Ella Apykhtin, and Katie Karabetsos.</p>
-</div>
-{% endblock %}
+        {% block page_content %}{% endblock %}
+    </div>
+
+
+    {% block footer %}
+        <footer>
+            <hr class="solid" style="color: rgb(0, 0, 0);">
+            <div class="container">
+                <p>Made with ❤ for CSC 210 by Adi Tangirala, Ariel Hirschhorn, Ella Apykhtin, and Katie Karabetsos.</p>
+            </div>
+        </footer>
+        
+    {% endblock %}
 {% endblock %}
 
 
