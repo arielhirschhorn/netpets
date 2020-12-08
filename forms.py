@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField, IntegerField, HiddenField, SelectField
 from wtforms.validators import DataRequired, URL, Optional, NumberRange
+from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 
 class addPet(FlaskForm):

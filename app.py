@@ -6,9 +6,6 @@ from wtforms import StringField, SubmitField, HiddenField
 from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
-from flask import redirect
-from flask import request
-#from forms import addPet
 import os
 
 
@@ -37,8 +34,8 @@ class Pets(db.Model):
 class petForm(FlaskForm):
     name= StringField('Enter a new name')
     species = StringField('Enter a new species')
-    #picture = FileField('Upload image')
-    #submit = SubmitField('Submit new pet')
+    # picture = FileField('Upload image')
+    submit = SubmitField('Submit new pet')
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -52,10 +49,18 @@ def internal_server_error(e):
 
 @app.route('/')
 def index():
+    #I'm sure there's a more efficient way to do it than loading the entire list 
+    #and then trimming it, but I just needed to get something working so I could work on styling it
+    pets = Pets.query.order_by(Pets.id)
+    previews = pets[:4]
+    return render_template('index.html', previews=previews)
+    
+@app.route('/addPet')
+def petList():
     return render_template('addPet.html')
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/addPet', methods=['POST', 'GET'])
 def upload_file():
     pet = None
     uploaded_file = request.files['file']
@@ -108,21 +113,10 @@ def upload_file():
 @app.route('/petlist')
 def petlist():
     pets = Pets.query.order_by(Pets.id)
-    return render_template('index.html', form=addPet,pets=pets)
-
-
-@app.route('/update/<int:id>', methods=['GET', 'POST'])
-def update(id):
-       return render_template('addPet.html')
-
-
-@app.route('/delete/<int:id>')
-def delete(id):
-   ingredient_to_delete = db.query.get_or_404(id)
-   try:
-       db.session.delete(ingredient_to_delete)
-       db.session.commit()
-       return redirect('/')
-   except:
-       #return "There was an error deleting that ingredient."
-       return render_template('index.html', pets=pets)
+    return render_template('petList.html', pets=pets)
+    
+@app.route('/petview')
+def viewpet():
+    pet_id = request.args.get('id')
+    pets = Pets.query.filter(Pets.id == pet_id)
+    return render_template('petview.html', pet=pets[0])
