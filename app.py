@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 from flask import Flask, render_template, redirect, request, url_for, flash
-from datetime import datetime
+from datetime import datetime, date
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, current_user, login_user, logout_user
 from flask_bootstrap import Bootstrap
