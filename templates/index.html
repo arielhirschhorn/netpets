@@ -7,17 +7,22 @@
 
 <body>
 	<section id="image-header">
-		<h1> Improve your life - find your perfect pet. </h1>
-		<ul>
-			<li> <a href="/"> Dogs </a> </li>
-			<li> <a href="/"> Cats </a> </li>
-			<li> <a href="/"> Birds </a> </li>
-			<li> <a href="/"> Fish </a> </li>
-			<li> <a href="/"> Lizards </a> </li>
-		</ul>
+		<h1> <center>Improve your life - find your perfect pet.</center> </h1>
+		<center>
+			<table>
+				<tr><a href="/"> Dogs </a> </tr>
+				<tr><a href="/"> Cats </a></tr>
+				<tr><a href="/"> Birds </a></tr>
+				<tr><a href="/"> Fish </a></tr>
+				<tr><a href="/"> Lizards </a></tr>
+			</table>
+		</center>
 	</section>
+
+
+
 	<section id="previews">
-		<h2> {/{petcount}/}+ Pets In Need of Adoption: </h2>
+		<h2>There are {/{petcount}/}+ pets ready to find a new home!</h2>
 		<ul>
 			{% for pet in previews %}
 			<li>
