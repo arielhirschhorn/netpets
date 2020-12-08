@@ -161,6 +161,7 @@ def upload_file():
             uploaded_file.save(os.path.join(app.config["IMAGE_UPLOADS"], uploaded_file.filename))
             species = request.form['species']
             name = request.form['petname']
+            age = int(request.form['age'])
             filename = uploaded_file.filename
             new_pet = Pets(species=species, age=age, filename=filename,name=name)
             try:
