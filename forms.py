@@ -9,4 +9,3 @@ class addPet(FlaskForm):
     pet_picture = FileField('Picture:', validators=[FileAllowed('Image only!'), FileRequired('File was empty!')])
     pet_species = SelectField('Species:', choices=[('cat', 'cat'), ('dog', 'dog'), ('fish', 'fish'), ('other', 'other')]),
     submit = SubmitField('Add it')
-    form = submitField

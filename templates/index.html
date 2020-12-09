@@ -21,22 +21,15 @@
 			</div>
 		</center>
 	</section>
-
-
-
 	<section id="previews">
-		<h3>There are {/{petcount}/}+ pets ready to find a new home!</h3>
+		<h2> {{petcount}}+ Pets In Need of Adoption: </h2>
 		<ul>
 			{% for pet in previews %}
 			<li>
-				<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}"width="50%" height="50%">
-				<br>
-				{{pet.name}} 
-				<br>
-				{{pet.species}}
+				<a href="/petview?id={{pet.id}}"> <img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}"> </a>
 			</li>
 			{% endfor %}
-			<li> <a href="/"> + </a> </li>
+			<li> <a href="/petlist"> + </a> </li>
 			
 		</ul>
 	</section>
@@ -47,34 +40,40 @@
 		</p>
 		<ul>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> General Adoption Checklist </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> Dog Care Guide </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> Cat Care Guide </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> Bird Care Guide </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> Fish Care Guide </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> Lizard Care Guide </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button> </a>
 			</li>
 		</ul>
 	</section>

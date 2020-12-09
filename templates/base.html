@@ -4,8 +4,9 @@
 
 {% block head %}
 {{ super() }}
-<link rel="shortcut icon" href="{{ url_for('static', filename='walter.ico') }}" type="image/x-icon">
-<link rel="icon" href="{{ url_for('static', filename='walter.ico') }}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="stylesheet" href="../static/css/styles.css">
 {% endblock %}
 
 {% block navbar %}
@@ -18,7 +19,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">NetPets</a>
+            <a class="navbar-brand" href="{{url_for('index')}}">NetPets!</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
