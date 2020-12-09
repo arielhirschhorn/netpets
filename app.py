@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, send_from_directory
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager, UserMixin, current_user, login_user, logout_user
 from flask_moment import Moment
@@ -108,6 +108,12 @@ class RegistrationForm(FlaskForm):
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
+
+
+@app.route('/walter.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'walter.ico', mimetype='image/vnd.microsoft.icon')
 
 
 @app.route('/login', methods=['GET', 'POST'])
