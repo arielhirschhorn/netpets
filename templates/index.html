@@ -7,65 +7,73 @@
 
 <body>
 	<section id="image-header">
-		<h1> Improve your life - find your perfect pet. </h1>
-		<ul>
-			<li> <a href="/"> Dogs </a> </li>
-			<li> <a href="/"> Cats </a> </li>
-			<li> <a href="/"> Small mammals </a> </li>
-			<li> <a href="/"> Birds </a> </li>
-			<li> <a href="/"> Reptiles </a> </li>
-			<li> <a href="/"> Fish </a> </li>
-			<li> <a href="/"> Other </a> </li>
-		</ul>
+		<h1> <center>Improve your life - find your perfect pet.</center> </h1>
+		<center>
+			<div style="padding-right: 80px; padding-left: 80px;">
+			<table cellpadding="10">
+				<tr><a href="/"> Dogs </a> </tr>
+				<tr><a href="/"> Cats </a></tr>
+				<tr><a href="/"> Small Mammals </a></tr>
+				<tr><a href="/"> Birds </a></tr>
+				<tr><a href="/"> Reptiles </a></tr>
+			</table>
+
+			</div>
+		</center>
 	</section>
 	<section id="previews">
-		<h2> {/{petcount}/}+ Pets In Need of Adoption: </h2>
+		<h2> {{petcount}}+ Pets In Need of Adoption: </h2>
 		<ul>
 			{% for pet in previews %}
 			<li>
-				<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}"width="50%" height="50%">
-				<br>
-				{{pet.name}} 
-				<br>
-				{{pet.species}}
+				<a href="/petview?id={{pet.id}}"> <img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}"> </a>
 			</li>
 			{% endfor %}
-			<li> <a href="/"> + </a> </li>
+			<li> <a href="/petlist"> + </a> </li>
 			
 		</ul>
 	</section>
 	<section id="instructions">
-		<h2> Planning to Adopt? </h2>
+		<h3> Planning to Adopt? </h3>
+		<p>
+			Check out our adoption guides up top!
+		</p>
 		<ul>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> General Adoption Checklist </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> Dog Care Guide </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> Cat Care Guide </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> Bird Care Guide </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> Fish Care Guide </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>
 			<li>
-				<img src="/">
+				<img src="/static/site-images/placeholder-square.webp">
 				<h3> Lizard Care Guide </h3>
 				<p> A short description of what this page is! </p>
+				<a href="/"> <button class="btn btn-primary"> Learn More </button> </a>
 			</li>
 		</ul>
 	</section>

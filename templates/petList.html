@@ -11,15 +11,24 @@
     <title>NetPets</title>
 </head>
 
+<div class="page-header">
+	<div class="container">
+		<h1>Pet List</h1>
+	</div>
+</div>
+
 <body>
 	<form method="POST" name="form" action="" enctype="multipart/form-data">
 		<label for="species"> Species: </label>
 		<select name="species">
+			<option value="any"> All </option>
 			<option value="dog"> Dog </option>
 			<option value="cat"> Cat </option>
+			<option value="small"> Small Mamamal </option>
 			<option value="bird"> Bird </option>
-			<option value="Fish"> Fish </option>
-			<option value="Lizard"> Lizard </option>
+			<option value="reptile"> Reptile </option>
+			<option value="fish"> Fish </option>
+			<option value="other"> Other </option>
 		</select>
 		<label for="age"> Age: </label>
 		<select name="age">
@@ -29,25 +38,27 @@
 			<option value="adult"> Adult </option>
 			<option value="old"> Old </option>
 		</select>
-		<input type="checkbox" name="male">
-		<label for="male"> Male </label>
-		<input type="checkbox" name="female">
-		<label for="child"> Female </label>
+		<label for="sex"> Sex: </label>
+		<select name="sex">
+			<option value="unknown"> Any </option>
+			<option value="m"> Male </option>
+			<option value="f"> Female </option>
+		</select>
 		<input type="checkbox" name="child">
 		<label for="child"> Child Friendly Required </label>
 		<input type="checkbox" name="other-pet">
 		<label for="other-pet"> Other Pet Friendly Required </label>
 		<input type="submit" name="submit" value="Search">
 	</form>
-    <ul id="ing">
+    <ul id="pet-list">
+		{% set species = ["dog", "cat", "small mammal", "bird", "reptile", "fish", "other"] %}
+		{% set age = ["baby", "young adult", "adult", "elder"] %}
 		{% for pet in pets %}
 		<li> <a href="/petview?id={{pet.id}}">
-			<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}"width="50%" height="50%">
-			<br>
-			{{pet.name}} 
-			<br>
-			{{pet.species}}
-		</a></li>
+			<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}">
+			<h1> {{pet.name}} </h1>
+			<h2> {{species[pet.species]}} - {{age[pet.age]}} </h2>
+		</a> </li>
 		{% endfor %}
 	</ul>
 </body>
