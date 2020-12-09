@@ -204,16 +204,19 @@ a:hover {
 }
 
 body {
-	/* Margin bottom by footer height */
-	margin-bottom: 60px;
+	  min-height: 100vh;
+	  position: relative;
+	  margin: 0;
+	  padding-bottom: 100px;
+	  box-sizing: border-box;
 }
 
 .footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 	/* Set the fixed height of the footer here */
-	height: 60px;
+	height: 100px;
 }
 
 .radio-class{

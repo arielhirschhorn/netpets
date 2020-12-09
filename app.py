@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for, send_from_directory
+from flask import Flask, render_template, redirect, request, url_for, send_from_directory, flash
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager, UserMixin, current_user, login_user, logout_user
 from flask_moment import Moment
@@ -126,6 +126,7 @@ def login():
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             return redirect(url_for('login'))
+            
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
@@ -136,6 +137,7 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
+    flash('You were successfully logged out. See you soon!')
     return redirect(url_for('index'))
 
 @app.route('/register/', methods=['GET', 'POST'])
