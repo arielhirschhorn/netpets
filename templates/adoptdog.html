@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block page_content %}
+
+<!doctype html>
+<html>
+
+    <style>
+        table.center{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <div class="page-header">
+        <h1>So you want a dog...</h1>
+    </div>
+
+    <div class="container">
+        <h3>
+            Before you train
+        </h3>
+        <p>
+            <b>Please, for the love of God, socialize your dog.</b> Like, seriously. A German Shepherd, for example, can bite a kid's finger off if they feel like it. While a chihuahua may not have the same effect, you do <b>not</b> want a mean doggo.
+            <br>Also spay or neuter them if they aren’t already. Intact male dogs have raging hormones that can lead to a lot of aggression and behavior issues. And unspayed female dogs will bleed everywhere in heat. Overall, not fun!
+        </p>
+
+        <h3>
+            The basics
+        </h3>
+        <p>
+            Dog training really boils down to two concepts:
+        </p>
+        <b>
+            <ol>
+                <li>Good = reward</li>
+                <li>Bad = punishment</li>
+            </ol>
+        </b>
+        <p>
+            For my psychology nerds, we’re basically just doing operant conditioning.
+        </p>
+        <h4>
+            Rewards
+        </h4>
+        <p>
+            For most dogs, this is food. But bear in mind that if you have a high energy working breed, your dog’s reward may look different, like playing with their favorite toy for a few seconds, throwing a ball once, etc! Just make sure your reward isn’t a distraction. Food is always a safe bet.
+        </p>
+        <p>
+            Treats need to be something small. You don’t want an overweight dog, so don’t go giving an entire milk bone every time they do something (not to mention milk bones are apparently crazy unhealthy). Good treat ideas (some healthier than others):
+        </p>
+
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="text-uppercase font-weight-bold">Normal</h5>
+                    <ul>
+                        <li style="list-style-type: none;">Cheerios</li>
+                        <li style="list-style-type: none;">Tiny commercial training treats (should be the size of a pea or peanut)</li>
+                        <li style="list-style-type: none;">Goldfish crackers</li>
+                        <li style="list-style-type: none;">Kibble (subtract from meals)</li>
+                        <li style="list-style-type: none;">Make your own?</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <h5 class="text-uppercase font-weight-bold">High reward/jackpot (use less,only for important stuff)</h5>
+                    <ul>
+                        <li style="list-style-type: none;">Chunk of cooked meat</li>
+                        <li style="list-style-type: none;">Peanut butter</li>
+                        <li style="list-style-type: none;">Bananas</li>
+                        <li style="list-style-type: none;">Cheese</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            Basically, this is the core of training. Dog does the thing, dog gets the treat. The thing is, this isn’t going to be instantaneous, and shouldn’t be (Are you really going to feed your dog mid-poop outside?). That’s why you have to pair it with praise (“Yes!” “Good boy!” etc). <strong>Use the praise word as soon as the dog does the thing you want it to.</strong> Then you can do the treat/play/whatever reward. Basically what this does is make the praise word become the treat, as you associate the two (classical conditioning if you’re into psychology). Clicker training is essentially this, but with a more hardcore association with the clicker sound.
+        </p>
+
+        <h4>Punishment</h4>
+        <p>
+            This sounds scarier than it is. Most of the time, all you’re doing is scolding your dog. See “Can’t understand anything” below. 
+        </p>
+        <p>Advanced trainers can use tools like prong collars etc but <b>unless you really know what you’re doing just stick to scolding.</b> Dogs want to please you, so if they understand you’re not happy they’ll feel bad enough. No, you will not cause long term psychological harm or anything by doing this (see: Can’t remember anything).</p>
+        <p><b>If you’re crate training, do not use the crate as punishment/time out!</b></p>
+
+        <h4>Training sessions</h4>
+        Many things, especially commands, will require you to do something over and over again with your dog. These training sessions are best kept on the shorter side, <b>5-15 minutes. 20 minutes tops.</b> You want these to be fun for your dog! Try to end on a high note too, whether that be your dog doing the thing correctly or using a jackpot reward at the end. If your dog thinks training is fun, they’ll probably be more easily trained.
+
+        <h3>
+            Understanding how dogs think
+        </h3>
+        <p>Dogs are smart compared to most animals, but at the end of the day they’re still… well… dogs. It’s important to remember these two things when training:</p>
+
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="font-weight-bold">Dogs can't remember anything</h5>
+                    <p>One thing I absolutely adore about dogs is they very much live in the moment. As a result, their short term memory (like, 30-120 seconds) is great and their long term memory is great (they will recognize you, remember dinner time, commands etc for their whole lives). But the stuff in between… not so much. <b>Dogs will pretty much forget events that happened more than a few minutes ago.</b> What does this mean training wise? Well, if you come home and notice a puddle of pee on the floor and start yelling at your pup… chances are your dog has no idea what you’re upset at because they peed an hour ago. <b>Reward/correct your dog right after or during behaviors!</b></p>
+                </div>
+
+                <div class="col-md-6">
+                    <h5 class="font-weight-bold"><center>Dogs can’t understand anything</center></h5>
+                    <p>Well this is obviously not completely true, because dogs will learn commands you teach them and pick up regular english words as well (Walk?!?!?). That being said, 99% of the time they have no flipping clue what you’re saying. Rather, <b>dogs understand tone.</b> Seriously, go try it out with your pup. Go up to them and go like “You’re a piece of crap! You’re absolutely garbage and I hate you and you’re a bad dog! Worst dog!” but say it in a high pitched, excited voice. Chances are they’ll get excited too. Now go up to them and say “I love you, you’re a good dog, best dog.” but say it in a deeper, stern/angry tone. Chances are, you’re not going to get the same reaction. This is important when it comes to correcting behaviors you don’t want. If your dog pees on the carpet, steals food off the table, etc, and you start scolding it in a normal/loving voice it’s not going to hear that as a scolding, it’ll hear praise. <b>Sound angry/mean/scary if you want your dog to not do something.</b> Don’t be afraid of being dramatic.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>
+            Simple commands
+        </h3>
+        <h4>Not being a mean doggo as an adult</h4>
+        <p><b>Seriously, this one’s important.</b> Luckily, it’s also the easiest. All you have to do is expose your pup to as much stuff as possible, <b>ASAP.</b> Let strangers pet your dog on walks. Let your friends come over (with masks and social distancing and stuff) and pet your dog. Have puppy playdates with your friends so they can interact with other dogs. Let them sniff other dogs on walks, if the other owner says it's okay (please ask first!). You want to expose your dog to as many people and other dogs as possible! This makes it normal, and thus not scary. If your puppy goes through the first chunk of its life never meeting strangers on the street or other dogs, that situation is not normal and not normal is scary. Scary means fight or flight, and trust me you do not want your dog doing either, but especially the former.</p>
+        <p>Another thing to worry about is food aggression. This one is super easy too! Again, you just want to expose your pup to different situations. Stick your hand in their food bowl now and then while they’re eating. Sounds weird, but it basically gets them used to the idea of “human near my stuff not scary.”</p>
+        <p>Puppies also bite. They don’t mean any harm, but when dogs play they use their mouths! If you don’t want your dog to bite you, just scold them. I find a high pitched yelp like a hurt dog sound works really well for this too. Again, they don’t mean any harm, so if you pretend like any teeth-contact is excruciatingly painful they’ll just learn not to bite ya. </p>
+
+        <h4>Not using the bathroom inside</h4>
+        <p>This one is probably the most frustrating to not have done, and is also arguably the one that takes the longest.</p>
+        <p>Remember what I said with “dogs can’t remember anything?” Yeah, that’s what makes this tricky. Basically, you have to catch them in the act. As puppies, this often means watching them like a hawk. <b>If they use the bathroom inside, scold them and immediately take them outside.</b> Even if they don’t have to go anymore. This is to associate bathroom=go outside.</p>
+        <p>If they do pee in the house, make sure to clean it extra well. Dogs can smell where they’ve gone before, and prefer to use the same spot more than once.</p>
+        <p>Some stuff to look out for when housetraining is sniffing around a lot. This could mean they’re looking for a good place to pee/poop, so if you see a lot of sniffing, maybe try taking them outside.
+        </p>
+        <p><b>If your dog is sitting by the door or whatever you want to use as a “I need to go outside” signal, bring them outside even if you know they don’t need to go.</b> This will teach your dog how to communicate with you. <b>If they use the bathroom outside, give them lots of praise (especially while they’re doing it, weird I know) and a reward.</b> Over time, you should be able to phase this out once they reliably use the bathroom outside. You shouldn’t be rewarding your dog for peeing for the rest of its life lol.</p>
+
+        <h4>Sit</h4>
+        <p>This is a fun one. Basically, you want to say the command (“Sit”) and/or a hand signal (yes, dogs can learn either or both! Both are handy for noisy situations or if your dog ever goes deaf or something). Then, using a treat (or maybe a toy if they’re play-motivated, haven’t tried), you’re going to want to hold it in front of their head and move it up and over it, basically luring them into the sit position. If they sit, praise/reward! And then you repeat a gazillion times, eventually phasing out the treats. (see training sessions above)</p>
+
+        <h4>Leash training</h4>
+        <p>Trust me, you do <b>not</b> want a big dog dragging you down the street. This one can be tricky and tedious. Pro dog trainers often argue about the best way to do this. I found my life got easier when I got a harness that <b>hooks in the front on their chest.</b> Back-attaching harnesses can just encourage pulling. But a front-attach makes pulling physically harder to do as it essentially turns them around when they do it, plus it takes pressure off their neck. It’s not needed though.</p>
+        <p>We’re not going for a perfect heel here, we just want the leash not to be straight. We want a loose leash with some slack in it at almost all times. Your dog can still sniff around and enjoy their walk, but you want them to respect you and not pull. The basic way we’re going to go about this is a bit tedious. Leash up your dog and attempt to go on a walk per usual, but <b>the second they pull switch directions and walk the other way.</b> This could mean you walk back and forth in the same 5 foot area for 15 minutes. Stick with it. What you’re doing is teaching your pup that pulling does not get them where they want to go, and that they have to watch you for directions.</p>
+        <p>As you’re walking your dog, if your dog is next to you and “checks in” (looks up at you) give them praise+reward. This teaches your dog to check in and watch <b>you</b> as they walk rather than going full speed ahead.</p>
+
+        <h4>Come/recall</h4>
+        <p>Overall pretty similar idea to sit, start over a small distance or on a leash <b>inside.</b> Say your dog's name and “come!” then show them a treat or reel them in on the leash. When they get to you, give them the reward and lots of praise. Repeat a gazillion times. Over time, you can increase the distance and go off leash. Once you’re confident your dog can come reliably, even if there’s no treats, THEN you can move outside (in a fenced area). Same concept, treats+rewards when they get to you. In theory, you should only have to say the command once.</p>
+        <p>Come is arguably more important than anything, as if your pup gets off leash in a place they shouldn’t or is running towards something dangerous, you want to be able to get them back safely.</p>
+
+        <h4>Not jumping on people</h4>
+        <p>This goes for any dog but especially big dogs, trust me you do not want it jumping on your guests, especially kiddos. Remember the rewards/punishments thing? Same applies! This one’s tricky, as most people accidentally reward a jumping dog by petting it. So, the main thing is <b>completely ignore your dog if it is jumping on you. Face the other way. Maybe scold them. But then pet them and praise if they are on all-fours.</b> Dogs jump because they are excited, usually excited to see you. Your attention (or lack thereof as a punishment) is usually plenty reward!</p>
+
+        <h4>Drop it</h4>
+        <p>This one’s important if you dog steals something potentially dangerous, or just something really important. I’ll admit, this is the main thing my dog struggles with… she steals a lot.</p>
+        <p>Basically, you want your dog to get excited about an object (like a toy) and have that object in their mouth. Then say the command “drop it!” and offer a high-value treat in exchange. They should drop the toy for the treat, you praise, and repeat a gazillion times. </p>
+
+        <h4>Stay</h4>
+        <p>This is a bit tricker. Once your dog has mastered sit, put them in sit and tell them the command “stay.” Start with very short increments, like a few seconds. If they sit through the whole duration, give them a release command (like “okay!” or “release!”) and give them treats and reward. Slowly increase the time increments. If they get up before the release command, maybe give them a slight scold (An “Ay!” or “no” should cut it) and start over. </p>
+        <p>After they sorta get the hang of this, try putting the reward a couple feet away from them after the sit+stay. If they get up, cover the reward, scold and start over. Once you say the release command, they can get up and get the reward themselves (with praise of course!).</p>
+        <p>As per usual, repeat a gazillion times and eventually phase out treats.</p>
+
+        <h4>Down</h4>
+        <p>Down, and really any trick/command involving going into a certain position/doing a certain movement, is essentially just sit. Say the command, lure them into the position (put treat on floor after a sit), and praise+reward when they do it. Repeat a gazillion times and eventually phase out treats.</p>
+        <p>And with that you should sorta have a decently trained dog! By all means do more research though, there’s so much info out there. I just wanted to give you a boiled down version. Even if you end up getting basic training done with someone else, these concepts are still good for making sure your dog actually remembers/listens to what they learned and for teaching anything new.</p>
+        <p>Best of luck with your pup!</p>
+
+
+
+    </div>
+
+</html>
+
+
+{% endblock  %}
