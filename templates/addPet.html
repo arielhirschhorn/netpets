@@ -99,7 +99,7 @@
       <br>
 
 
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-md-3">
           <input type="radio" id="baby" name="age" value="0">
       <label for="baby">Baby</label>
@@ -212,42 +212,123 @@
       
       
       
-      <div class = "col-md-6">lol
+      <div class = "col-md-6">
 
-        <br>
+
+        <div class = "row">
+          <div class = "col-md-6">
+            <input type="radio" id="notSN" name="makeBabies" value="False">
+      <label for="notSN">Not spayed/neutered</label>
+          </div>
+          <div class = "col-md-6">
+            <input type="radio" id="SN" name="makeBabies" value="True">
+      <label for="SN">Spayed/neutered</label>
+          </div>
+        </div>
+        
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Is the pet spayed/neutered?</strong></p>
+        </div>
+      </div>
+
+
    
-      <p><input type="radio" id="notSN" name="makeBabies" value="False">
+<!--       <p><input type="radio" id="notSN" name="makeBabies" value="False">
       <label for="notSN">Not spayed/neutered</label></p>
       <p><input type="radio" id="SN" name="makeBabies" value="True">
-      <label for="SN">Spayed/neutered</label></p>
+      <label for="SN">Spayed/neutered</label></p> -->
 
       <br>
-
-      <p><input type="radio" id="noShots" name="vaccinated" value="False">
-      <label for="noShots">Needs vaccinations</label></p>
-      <p><input type="radio" id="shots" name="vaccinated" value="True">
-      <label for="shots">Up to date on vaccinations</label></p>
-
       <br>
 
-      <p><input type="radio" id="noKids" name="kidFriendly" value="False">
-      <label for="noKids">Not good with children</label></p>
-      <p><input type="radio" id="kids" name="kidFriendly" value="True">
-      <label for="kids">Good with children</label></p>
-
-    <br>
-
-      <p><input type="radio" id="noOtherPets" name="petFriendly" value="False">
-      <label for="noOtherPets">Not good with other pets</label></p>
-      <p><input type="radio" id="otherPets" name="petFriendly" value="True">
-      <label for="otherPets">Good with other pets</label></p>
+      
+        <div class = "row">
+          <div class = "col-md-6">
+            <input type="radio" id="noShots" name="vaccinated" value="False">
+      <label for="noShots">No</label>
+          </div>
+          <div class = "col-md-6">
+            <input type="radio" id="shots" name="vaccinated" value="True">
+      <label for="shots">Yes</label>
+          </div>
+        </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Is the pet up on his shots?</strong></p>
+        </div>
+      </div>
 
       <br>
+      <br>
 
-      <p><input type= "text" name="description">
+      <div class = "row">
+        <div class = "col-md-6">
+          <input type="radio" id="noKids" name="kidFriendly" value="False">
+      <label for="noKids">Not good with children</label>
+        </div>
+        <div class = "col-md-6">
+          <input type="radio" id="kids" name="kidFriendly" value="True">
+      <label for="kids">Good with children</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Is the pet good with children?</strong></p>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+
+      <div class = "row">
+        <div class = "col-md-6">
+          <input type="radio" id="noOtherPets" name="petFriendly" value="False">
+      <label for="noOtherPets">Not good with other pets</label>
+        </div>
+        <div class = "col-md-6">
+          <input type="radio" id="otherPets" name="petFriendly" value="True">
+      <label for="otherPets">Good with other pets</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Is the pet good with other pets?</strong></p>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+
+      <p><input type= "text" name="description" class="form-control">
       <label for="description">Pet description</label></p>
 
       <p><input type="submit" value="Submit"></p>
+      
+
+
+      <!-- <p><input type="radio" id="noShots" name="vaccinated" value="False">
+      <label for="noShots">Needs vaccinations</label></p>
+      <p><input type="radio" id="shots" name="vaccinated" value="True">
+      <label for="shots">Up to date on vaccinations</label></p> -->
+
+      <!-- <p><input type="radio" id="noKids" name="kidFriendly" value="False">
+      <label for="noKids">Not good with children</label></p>
+      <p><input type="radio" id="kids" name="kidFriendly" value="True">
+      <label for="kids">Good with children</label></p>
+ -->
+
+
+      <!-- <p><input type="radio" id="noOtherPets" name="petFriendly" value="False">
+      <label for="noOtherPets">Not good with other pets</label></p>
+      <p><input type="radio" id="otherPets" name="petFriendly" value="True">
+      <label for="otherPets">Good with other pets</label></p> -->
+
    
 
 
