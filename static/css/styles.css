@@ -2,9 +2,14 @@ body {
 	background-color: #cff2e0;
 }
 
+
+
+/* navbar */
+
 .navbar {
 	margin-bottom: 0px;
 }
+
 
 .site-container {
 	width: 90%;
@@ -196,4 +201,31 @@ a:hover {
 
 #pet-view img {
 	width: 50%;
+}
+
+body {
+	  min-height: 100vh;
+	  position: relative;
+	  margin: 0;
+	  padding-bottom: 100px;
+	  box-sizing: border-box;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 100px;
+}
+
+.radio-class{
+	display: flex;
+	flex: 1 1 0;
+	flex-wrap: nowrap;
+	position: relative;
+}
+
+span {
+	float: left;
 }

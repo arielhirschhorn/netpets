@@ -1,82 +1,346 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
+
 {% block page_content %}
 
 <!doctype html>
 <html>
-<div class="page-header">
-	<div class="container">
-		<h1>Add a Pet</h1>
-	</div>
-</div>
+<head>
+    <title>NetPets - add a pet!</title>
+</head>
+   <div class="page-header">
+        <br>
+        <h1>Add a pet</h1>
+    </div>
 <body>
-    <h1> Add a pet: <h1>
-    <form method="POST" name="form" action="" enctype="multipart/form-data">
-	  <p><input type="file" name="file"></p>
 
-	  <p><input type= "text" name="petname"></p>
+
+
+
+
+    <form method="POST" name="form" action="" enctype="multipart/form-data">
+
+      <div class="row">
+        <div class = "col-md-6">
+
+
+    <p><input type="file" name="file" class="form-control"></p>
+    <label for="file">Upload a picture of the pet</label>
+    
+    <br>
+    <br>
+
+	  <p><input type= "text" name="petname" class="form-control"></p>
 	  <label for="petname">Pet name</label>
 
-	  <p><input type="radio" id="dog" name="species" value="0"></p>
+<br>
+<br>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-1">
+        <input type="radio" id="dog" name="species" value="0" >
       <label for="dog">Dog</label>
-      <p><input type="radio" id="cat" name="species" value="1"></p>
+    </div>  
+
+    <div class="col-md-1">
+        <input type="radio" id="cat" name="species" value="1">
       <label for="cat">Cat</label>
-      <p><input type="radio" id="small" name="species" value="2"></p>
+    </div>  
+
+    <div class="col-md-2">
+        <input type="radio" id="small" name="species" value="2">
       <label for="small">Small Mammal</label>
-      <p><input type="radio" id="bird" name="species" value="3"></p>
+    </div>  
+
+    <div class="col-md-1">
+        <input type="radio" id="bird" name="species" value="3">
       <label for="bird">Bird</label>
-      <p><input type="radio" id="reptile" name="species" value="4"></p>
+    </div>
+
+    <div class="col-md-1">
+      <input type="radio" id="reptile" name="species" value="4">
       <label for="reptile">Reptile</label>
-      <p><input type="radio" id="fish" name="species" value="5"></p>
+    </div>
+
+    <div class="col-md-1">
+      <input type="radio" id="fish" name="species" value="5">
       <label for="fish">Fish</label>
-      <p><input type="radio" id="other" name="species" value="6"></p>
+    </div>
+
+    <div class="col-md-1">
+      <input type="radio" id="other" name="species" value="6">
       <label for="other">Other</label>
+    </div>
 
-      <p><input type= "text" name="breed"></p>
-      <label for="breed">Pet breed</label>
+    <!-- now that we have used up all the 12 coloumbs in this row , lets go create a new "row class" , Alas in the same container -->
+</div>  <!-- end of row -->
 
-	  <p><input type="radio" id="baby" name="age" value="0"></p>
+<div class="row">
+    <div class="col-md-12">
+        <p><strong>Pet type</strong></p>
+    </div>
+</div>
+
+
+
+
+      <br>
+      <br>
+
+      <p><input type= "text" name="breed" class="form-control">
+      <label for="breed">Pet breed</label></p>
+
+      <br>
+      <br>
+
+
+      <div class="row justify-content-center">
+        <div class="col-md-3">
+          <input type="radio" id="baby" name="age" value="0">
       <label for="baby">Baby</label>
-      <p><input type="radio" id="young" name="age" value="1"></p>
+        </div>
+        <div class="col-md-3">
+          <input type="radio" id="young" name="age" value="1">
       <label for="young">Young Adult</label>
-      <p><input type="radio" id="adult" name="age" value="2"></p>
+        </div>
+        <div class="col-md-3">
+          <input type="radio" id="adult" name="age" value="2">
       <label for="adult">Adult</label>
-      <p><input type="radio" id="elder" name="age" value="3"></p>
+        </div>
+        <div class="col-md-3">
+          <input type="radio" id="elder" name="age" value="3">
       <label for="elder">Elder</label>
-    
-      <p><input type="radio" id="m" name="sex" value="0"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Pet age</strong></p>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+
+      <div class = "row">
+        <div class = "col-md-4">
+          <input type="radio" id="m" name="sex" value="0">
       <label for="m">Male</label>
-      <p><input type="radio" id="f" name="sex" value="1"></p>
+        </div>
+        <div class = "col-md-4">
+          <input type="radio" id="f" name="sex" value="1">
       <label for="f">Female</label>
-      <p><input type="radio" id="x" name="sex" value="2"></p>
+        </div>
+        <div class = "col-md-4">
+          <input type="radio" id="x" name="sex" value="2">
       <label for="x">Sex Unknown</label>
-   
-      <p><input type="radio" id="notSN" name="makeBabies" value="False"></p>
-      <label for="notSN">Not spayed/neutered</label>
-      <p><input type="radio" id="SN" name="makeBabies" value="True"></p>
-      <label for="SN">Spayed/neutered</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Pet sex</strong></p>
+        </div>
+      </div>
 
-      <p><input type="radio" id="noShots" name="vaccinated" value="False"></p>
-      <label for="noShots">Needs vaccinations</label>
-      <p><input type="radio" id="shots" name="vaccinated" value="True"></p>
-      <label for="shots">Up to date on vaccinations</label>
+      <br>
+      <br>
 
-      <p><input type="radio" id="noKids" name="kidFriendly" value="False"></p>
-      <label for="noKids">Not good with children</label>
-      <p><input type="radio" id="kids" name="kidFriendly" value="True"></p>
-      <label for="kids">Good with children</label>
 
-      <p><input type="radio" id="noOtherPets" name="petFriendly" value="False"></p>
-      <label for="noOtherPets">Not good with other pets</label>
-      <p><input type="radio" id="otherPets" name="petFriendly" value="True"></p>
-      <label for="otherPets">Good with other pets</label>
 
-      <p><input type= "text" name="description"></p>
-      <label for="description">Pet description</label>
-   
+
       
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+      <!-- <div>
+	    <span><input type="radio" id="dog" name="species" value="0">
+      <label for="dog">Dog</label></span>
+      <span><input type="radio" id="cat" name="species" value="1">
+      <label for="cat">Cat</label></span>
+      <span><input type="radio" id="small" name="species" value="2">
+      <label for="small">Small Mammal</label></span>
+      <span><input type="radio" id="bird" name="species" value="3">
+      <label for="bird">Bird</label></span>
+      <span><input type="radio" id="reptile" name="species" value="4">
+      <label for="reptile">Reptile</label></span>
+      <span><input type="radio" id="fish" name="species" value="5">
+      <label for="fish">Fish</label></span>
+      <span><input type="radio" id="other" name="species" value="6">
+      <label for="other">Other</label></span>
+      
+</div>       -->
+
+
+
+<!-- 	  <p><input type="radio" id="baby" name="age" value="0">
+      <label for="baby">Baby</label></p>
+      <p><input type="radio" id="young" name="age" value="1">
+      <label for="young">Young Adult</label></p>
+      <p><input type="radio" id="adult" name="age" value="2">
+      <label for="adult">Adult</label></p>
+      <p><input type="radio" id="elder" name="age" value="3">
+      <label for="elder">Elder</label></p> -->
+
+      <!-- <br>
+    
+      <p><input type="radio" id="m" name="sex" value="0">
+      <label for="m">Male</label></p>
+      <p><input type="radio" id="f" name="sex" value="1">
+      <label for="f">Female</label></p>
+      <p><input type="radio" id="x" name="sex" value="2">
+      <label for="x">Sex Unknown</label></p> -->
+
+      
+      
+      
+
+      </div>
+      
+      
+      
+      
+      <div class = "col-md-6">
+
+
+        <div class = "row">
+          <div class = "col-md-6">
+            <input type="radio" id="notSN" name="makeBabies" value="False">
+      <label for="notSN">Not spayed/neutered</label>
+          </div>
+          <div class = "col-md-6">
+            <input type="radio" id="SN" name="makeBabies" value="True">
+      <label for="SN">Spayed/neutered</label>
+          </div>
+        </div>
+        
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Is the pet spayed/neutered?</strong></p>
+        </div>
+      </div>
+
+
+   
+<!--       <p><input type="radio" id="notSN" name="makeBabies" value="False">
+      <label for="notSN">Not spayed/neutered</label></p>
+      <p><input type="radio" id="SN" name="makeBabies" value="True">
+      <label for="SN">Spayed/neutered</label></p> -->
+
+      <br>
+      <br>
+
+      
+        <div class = "row">
+          <div class = "col-md-6">
+            <input type="radio" id="noShots" name="vaccinated" value="False">
+      <label for="noShots">No</label>
+          </div>
+          <div class = "col-md-6">
+            <input type="radio" id="shots" name="vaccinated" value="True">
+      <label for="shots">Yes</label>
+          </div>
+        </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Is the pet up on his shots?</strong></p>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      <div class = "row">
+        <div class = "col-md-6">
+          <input type="radio" id="noKids" name="kidFriendly" value="False">
+      <label for="noKids">Not good with children</label>
+        </div>
+        <div class = "col-md-6">
+          <input type="radio" id="kids" name="kidFriendly" value="True">
+      <label for="kids">Good with children</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Is the pet good with children?</strong></p>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+
+      <div class = "row">
+        <div class = "col-md-6">
+          <input type="radio" id="noOtherPets" name="petFriendly" value="False">
+      <label for="noOtherPets">Not good with other pets</label>
+        </div>
+        <div class = "col-md-6">
+          <input type="radio" id="otherPets" name="petFriendly" value="True">
+      <label for="otherPets">Good with other pets</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Is the pet good with other pets?</strong></p>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+
+      <p><input type= "text" name="description" class="form-control">
+      <label for="description">Pet description</label></p>
+
       <p><input type="submit" value="Submit"></p>
+      
+
+
+      <!-- <p><input type="radio" id="noShots" name="vaccinated" value="False">
+      <label for="noShots">Needs vaccinations</label></p>
+      <p><input type="radio" id="shots" name="vaccinated" value="True">
+      <label for="shots">Up to date on vaccinations</label></p> -->
+
+      <!-- <p><input type="radio" id="noKids" name="kidFriendly" value="False">
+      <label for="noKids">Not good with children</label></p>
+      <p><input type="radio" id="kids" name="kidFriendly" value="True">
+      <label for="kids">Good with children</label></p>
+ -->
+
+
+      <!-- <p><input type="radio" id="noOtherPets" name="petFriendly" value="False">
+      <label for="noOtherPets">Not good with other pets</label></p>
+      <p><input type="radio" id="otherPets" name="petFriendly" value="True">
+      <label for="otherPets">Good with other pets</label></p> -->
+
+   
+
+
+
+
+
+
+      </div>
+
+      </div>
+      
+
 
     </form>
     <p> To see all pets in the database, click <a href="/petlist">here.</a></p>

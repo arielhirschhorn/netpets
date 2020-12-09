@@ -6,8 +6,16 @@
 {% block page_content %}
 
 <body>
+
+	    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+	{% endfor %}
+	
 	<section id="image-header">
-		<h1> <center>Improve your life - find your perfect pet.</center> </h1>
+		<h1> <center>Improve your life. Find your perfect pet.</center> </h1>
 		<center>
 			<div style="padding-right: 80px; padding-left: 80px;">
 			<table cellpadding="10">
@@ -22,7 +30,7 @@
 		</center>
 	</section>
 	<section id="previews">
-		<h2> {{petcount}}+ Pets In Need of Adoption: </h2>
+		<h2> There are {{petcount}} pets in need of adoption today!</h2>
 		<ul>
 			{% for pet in previews %}
 			<li>
@@ -48,12 +56,12 @@
 			<li>
 				<img src="/static/site-images/placeholder-square.webp">
 				<h3> Dog Care Guide </h3>
-				<p> A short description of what this page is! </p>
-				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
+				<p>Everything you need to know on<br>how to train your new furry friend!</p>
+				<a href="/adoptdog"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>
 			<li>
 				<img src="/static/site-images/placeholder-square.webp">
-				<h3> Cat Care Guide </h3>
+				<h3> Lizard Care Guide </h3>
 				<p> A short description of what this page is! </p>
 				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
 			</li>

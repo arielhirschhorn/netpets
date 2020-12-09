@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, send_from_directory, flash
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager, UserMixin, current_user, login_user, logout_user
 from flask_moment import Moment
@@ -110,6 +110,12 @@ def load_user(id):
     return User.query.get(int(id))
 
 
+@app.route('/walter.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'walter.ico', mimetype='image/vnd.microsoft.icon')
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -120,6 +126,7 @@ def login():
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             return redirect(url_for('login'))
+            
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
@@ -130,6 +137,7 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
+    flash('You were successfully logged out. See you soon!')
     return redirect(url_for('index'))
 
 @app.route('/register/', methods=['GET', 'POST'])
@@ -300,3 +308,7 @@ def viewpet():
 @app.route('/adoptdog')
 def adoptdog():
    return render_template('adoptdog.html')
+
+@app.route('/axolotl')
+def axolotl():
+    return render_template('axolotl.html')

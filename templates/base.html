@@ -4,13 +4,17 @@
 
 {% block head %}
 {{ super() }}
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-<link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="shortcut icon" href="/walter.ico" type="image/x-icon">
+    <link rel="icon" href="/walter.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
 {% endblock %}
 
+
+
 {% block navbar %}
-<div class="navbar navbar-default" role="navigation">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -34,6 +38,9 @@
                     <ul class = "dropdown-menu">
                                     <ul class="nav navbar-nav">
                                         <li><a href="/adoptdog">Dogs</a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="/axolotl">Axolotls</a></li>
                                     </ul>
                     </ul>
                 </li> 
@@ -91,12 +98,16 @@
 
 
     {% block footer %}
-        <footer>
-            <hr class="solid" style="color: rgb(0, 0, 0);">
-            <div class="container" style="color: gray;">
-                <p>Made with 100% organic ❤ for CSC 210 by Adi Tangirala, Ariel Hirschhorn, Ella Apykhtin, and Katie Karabetsos.</p>
-            </div>
+
+
+        <footer class = "footer">
+                <hr class="solid">
+                <div class="container" style="color:#d6d6d6">
+                    <p>Made with 100% organic ❤ for CSC 210 by Adi Tangirala, Ariel Hirschhorn, Ella Apykhtin, and Katie Karabetsos.</p>
+                </div>
         </footer>
+
+
         
     {% endblock %}
 {% endblock %}
@@ -110,6 +121,100 @@
 {% block styles %}
 {{ super() }}
 <style>
-    .navbar-nav{color: blue;}
+    
+.navbar-default {
+  background-color: #32021f;
+  border-color: #4b2e39;
+}
+.navbar-default .navbar-brand {
+  color: #d6d6d6;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #d6d6d6;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #d6d6d6;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #32021f;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #d6d6d6;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #ffffff;
+  background-color: #4b2e39;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
+  background-color: #4b2e39;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  background-color: #4b2e39;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #4b2e39;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #4b2e39;
+}
+.navbar-default .navbar-toggle {
+  border-color: #4b2e39;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #4b2e39;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #d6d6d6;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #d6d6d6;
+}
+.navbar-default .navbar-link {
+  color: #d6d6d6;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #d6d6d6;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #4b2e39;
+  }
+}
+
+.footer{
+    background-color:#4B2E39;
+}
+
 </style> 
 {% endblock styles %}
