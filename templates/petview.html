@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}NetPets{% endblock %}
+
+{% block page_content %}
+
+<!doctype html>
+<html>
+<head>
+    <title>NetPets</title>
+</head>
+
+<body>
+	<div id="pet-view">
+		<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}" class="col-sm-6">
+		<div class="col-sm-6">
+			<h1> My name is {{pet.name}}! </h1>
+			{% set species = ["dog", "cat", "small mammal", "bird", "reptile", "fish", "other"] %}
+			{% set age = ["baby", "young adult", "adult", "elder"] %}
+			{% set sex = ["male", "female", "sex unknown"] %}
+			<p> {{pet.name}} </p>
+			<p> {{species[pet.species]}} </p>
+			<p> {{pet.breed}} </p>
+			<p> {{age[pet.age]}} </p>
+			<p> {{sex[pet.sex]}} </p>
+		
+			<p> Spayed/Neutered: {{pet.makeBabies}} </p>
+			<p> Up-to-date vaccinations: {{pet.vaccinated}} </p>
+			<p> {{pet.description}} </p>
+		</div>
+	</div>
+</body>
+</html>
+	
+{% endblock  %}
