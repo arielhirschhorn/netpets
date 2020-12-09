@@ -2,15 +2,21 @@ body {
 	background-color: #cff2e0;
 }
 
+<<<<<<< HEAD
 
 
 /* navbar */
 
+=======
+>>>>>>> katie
 .navbar {
 	margin-bottom: 0px;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> katie
 .site-container {
 	width: 90%;
 	max-width: 800px;
@@ -201,6 +207,7 @@ a:hover {
 
 #pet-view img {
 	width: 50%;
+<<<<<<< HEAD
 }
 
 body {
@@ -228,4 +235,6 @@ body {
 
 span {
 	float: left;
+=======
+>>>>>>> katie
 }
