@@ -7,16 +7,56 @@
 <html>
 <div class="page-header">
 	<div class="container">
+    <br>
 		<h1>Add a Pet</h1>
 	</div>
 </div>
 <body>
-    <h1> Add a pet: </h1>
-    <form method="POST" name="form" action="" enctype="multipart/form-data">
-	  <p><input type="file" name="file"></p>
 
-	  <p><input type= "text" name="petname"></p>
-	  <label for="petname">Pet name</label>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><label for="petname">Pet name</label></th>
+            <td><input type= "text" name="petname"></td>
+          </tr>
+
+          <tr>
+            <th scope="row">Upload an image of the new pet</th>
+            <td><form method="POST" name="form" action="" enctype="multipart/form-data"></form><p><input type="file" name="file"></p></td>
+          </tr>
+
+          <tr>
+            <th scope="row">Pet type</th>
+            <td><input type="radio" id="dog" name="species" value="0"> <label for="dog">Dog</label> </td>
+            <td><input type="radio" id="cat" name="species" value="1"> <label for="cat">Cat</label> </td>
+            <td><input type="radio" id="small" name="species" value="2"> <label for="small">Small Mammal</label> </td>
+            <td><input type="radio" id="bird" name="species" value="3"> <label for="bird">Bird</label> </td>
+            <td><input type="radio" id="reptile" name="species" value="4"> <label for="reptile">Reptile</label> </td>
+            <td><input type="radio" id="fish" name="species" value="5">< label for="fish">Fish</label> </td>
+            <td><input type="radio" id="other" name="species" value="6"> <label for="other">Other</label> </td>
+          </tr>
+
+          <tr>
+
+          </tr>
+          
+
+        </tbody>
+      </table>
+
+    <!-- <form method="POST" name="form" action="" enctype="multipart/form-data"> -->
+	  <!-- <p><input type="file" name="file"></p> -->
+
+	  <!-- <p><input type= "text" name="petname"></p> -->
+	  <!-- <label for="petname">Pet name</label> -->
 
 	  <p><input type="radio" id="dog" name="species" value="0"></p>
       <label for="dog">Dog</label>
