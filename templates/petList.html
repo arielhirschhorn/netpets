@@ -39,15 +39,15 @@
 		<label for="other-pet"> Other Pet Friendly Required </label>
 		<input type="submit" name="submit" value="Search">
 	</form>
-    <ul id="ing">
+    <ul id="pet-list">
+		{% set species = ["dog", "cat", "small mammal", "bird", "reptile", "fish", "other"] %}
+		{% set age = ["baby", "young adult", "adult", "elder"] %}
 		{% for pet in pets %}
 		<li> <a href="/petview?id={{pet.id}}">
-			<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}"width="50%" height="50%">
-			<br>
-			{{pet.name}} 
-			<br>
-			{{pet.species}}
-		</a></li>
+			<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}">
+			<h1> {{pet.name}} </h1>
+			<h2> {{species[pet.species]}} - {{age[pet.age]}} </h2>
+		</a> </li>
 		{% endfor %}
 	</ul>
 </body>

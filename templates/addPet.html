@@ -14,11 +14,70 @@
     <h1> Add a pet: <h1>
     <form method="POST" name="form" action="" enctype="multipart/form-data">
 	  <p><input type="file" name="file"></p>
+
 	  <p><input type= "text" name="petname"></p>
 	  <label for="petname">Pet name</label>
-	  <p><input type="text" name="species" ></p>
-	  <label for="species">Species</label>
+
+	  <p><input type="radio" id="dog" name="species" value="0"></p>
+      <label for="dog">Dog</label>
+      <p><input type="radio" id="cat" name="species" value="1"></p>
+      <label for="cat">Cat</label>
+      <p><input type="radio" id="small" name="species" value="2"></p>
+      <label for="small">Small Mammal</label>
+      <p><input type="radio" id="bird" name="species" value="3"></p>
+      <label for="bird">Bird</label>
+      <p><input type="radio" id="reptile" name="species" value="4"></p>
+      <label for="reptile">Reptile</label>
+      <p><input type="radio" id="fish" name="species" value="5"></p>
+      <label for="fish">Fish</label>
+      <p><input type="radio" id="other" name="species" value="6"></p>
+      <label for="other">Other</label>
+
+      <p><input type= "text" name="breed"></p>
+      <label for="breed">Pet breed</label>
+
+	  <p><input type="radio" id="baby" name="age" value="0"></p>
+      <label for="baby">Baby</label>
+      <p><input type="radio" id="young" name="age" value="1"></p>
+      <label for="young">Young Adult</label>
+      <p><input type="radio" id="adult" name="age" value="2"></p>
+      <label for="adult">Adult</label>
+      <p><input type="radio" id="elder" name="age" value="3"></p>
+      <label for="elder">Elder</label>
+    
+      <p><input type="radio" id="m" name="sex" value="0"></p>
+      <label for="m">Male</label>
+      <p><input type="radio" id="f" name="sex" value="1"></p>
+      <label for="f">Female</label>
+      <p><input type="radio" id="x" name="sex" value="2"></p>
+      <label for="x">Sex Unknown</label>
+   
+      <p><input type="radio" id="notSN" name="makeBabies" value="False"></p>
+      <label for="notSN">Not spayed/neutered</label>
+      <p><input type="radio" id="SN" name="makeBabies" value="True"></p>
+      <label for="SN">Spayed/neutered</label>
+
+      <p><input type="radio" id="noShots" name="vaccinated" value="False"></p>
+      <label for="noShots">Needs vaccinations</label>
+      <p><input type="radio" id="shots" name="vaccinated" value="True"></p>
+      <label for="shots">Up to date on vaccinations</label>
+
+      <p><input type="radio" id="noKids" name="kidFriendly" value="False"></p>
+      <label for="noKids">Not good with children</label>
+      <p><input type="radio" id="kids" name="kidFriendly" value="True"></p>
+      <label for="kids">Good with children</label>
+
+      <p><input type="radio" id="noOtherPets" name="petFriendly" value="False"></p>
+      <label for="noOtherPets">Not good with other pets</label>
+      <p><input type="radio" id="otherPets" name="petFriendly" value="True"></p>
+      <label for="otherPets">Good with other pets</label>
+
+      <p><input type= "text" name="description"></p>
+      <label for="description">Pet description</label>
+   
+      
       <p><input type="submit" value="Submit"></p>
+
     </form>
     <p> To see all pets in the database, click <a href="/petlist">here.</a></p>
 
