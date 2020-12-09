@@ -308,3 +308,7 @@ def viewpet():
 @app.route('/adoptdog')
 def adoptdog():
    return render_template('adoptdog.html')
+
+@app.route('/axolotl')
+def axolotl():
+    return render_template('axolotl.html')

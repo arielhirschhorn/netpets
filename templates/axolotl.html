@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block page_content %}
+
+<!doctype html>
+<html>
+
+    <div class="page-header">
+        <br>
+        <h1>So you want an axolotl...</h1>
+    </div>
+
+    <div class = "container">
+
+        <h3>What are axolotls?</h3>
+        <h4>Where do they come from?</h4>
+        <p>Axolotls are native to Lake Xochimilco and Lake Chalco in the Valley of Mexico, and are only found there in the wild. Unfortunately, they are very rare or even extinct in the wild due to pollution in those lakes. They are however very popular in biology labs, as they have the ability to regenerate gills, limbs, tails, and even organs!</p>
+        
+        <h4>Yeah, but what ARE they?</h4>
+        <p>Axolotls are salamanders. Salamanders are amphibians, meaning they are in the same family as frogs and toads. Like frogs and toads, salamanders start off as larvae (tadpole) and eventually go through a metamorphosis. Salamanders’ larvae, however, come with all four legs. What makes axolotls unique is the fact they never "grow up" and go through that metamorphosis. They live their entire lives under water, growing approximately 8-10 inches long.</p>
+        <p>The feathery things on the side of their heads are their gills. Like fish, that's how they do most of their breathing. However, like most salamanders, they also have the ability to absorb oxygen directly through their skin. And, if that wasn't enough, they have lungs just in case!</p>
+        
+        <h3>Axolotl colors</h3>
+        <p>Axolotls come in many colors, or morphs. The natural color, or wild type, varies from dark grey to greenish brown and have dark spots. Possibly the most popular in the pet trade is the leucistic morph, which means they lack skin pigment. These axolotls are white with dark eyes and pink gills. On the flip side, there are melanoid axolotls which have extra skin pigment and are very dark grey or black. Close to the leucistic morph in appearance, there are albino axolotls. These come in white or yellow and have pink gills and pale, sorta creepy eyes. My favorite morph that I've seen is called a "dirty leucistic," which has the same appearance of a leucistic but with grey or brown speckles.</p>
+        
+        <h3>Setting up a tank for an axolotl</h3>
+        <h4>What aquarium to buy?</h4>
+        <p>Axolotls need, at minimum, 10 gallons of water each. 20 gallons is even better. They prefer to swim side to side than up and down, so if there is an option to get a long or tall aquarium opt for long if possible. Also, if there is the option, a screen lid as opposed to a solid aquarium lid is helpful. This allows more water to evaporate, which keeps the water cooler.</p>
+        <p>Axolotls can live with other same-size adult axolotls (babies are cannibalistic), but the same gallon rules apply. For example, a 30 gallon tank should not hold any more than 2-3 axolotls. Axolotls can not live with other fish or animals in the same aquarium, as either the axolotl will try to eat it or they will try to eat the axolotl.</p>
+
+        <h4>Dechlorinator</h4>
+        <p>A good aquarium dechlorinator, such as Seachem Prime, is absolutely essential if you want your axolotl to live. Chlorine and other substances found in tap water are harmless to humans, but toxic to fish, axolotls, and many other animals. Adding dechlorinator to your aquarium water makes it safe. May dechlorinators can also detoxify dangerous byproducts of your axolotls waste, in emergencies.</p>
+
+        <h4>Temperature</h4>
+        <p>You will also need a thermometer for your tank, I recommend an inexpensive aquarium thermometer that suction cups to the side. The thermometer is helpful for ensuring your axolotl stays cool. Axolotls DO NOT like being warm. Their preferred temperature (degrees F) is in the 60s, but low 70s is okay too. Above 75, your axolotl will get stressed. In the 80s and 90s your axolotl will be quite upset. Keeping axolotls stressed, especially from heat, will eventually kill them, so please be careful!</p>
+
+        <h4>Filter</h4>
+        <p>Axolotls do not like water movement, and a very strong current in your aquarium will make your axolotl very stressed. However, a small filter is essential for helping to keep your water cleaner, add essential oxygen, and provide a home for "good bacteria," which I'll get into later. I personally recommend getting a small, low power submersible filter with a spray bar. The spray bar helps distribute the water to ensure there's not a lot of movement.</p>
+
+        <h4>Decor</h4>
+        <p>For substrate it is VERY IMPORTANT that you do NOT USE GRAVEL. Axolotls, as loveable as they are, aren't the smartest and will ingest it. The gravel can and will get stuck in their digestive tract, eventually killing your pet. Use either a bare bottom or, if you must, a very fine, pet-safe sand. You can also use large rocks or stones that are too big to be ingested as decor.</p>
+        <p>Live plants can be a little tricky without gravel, so fake plants work fine. Ensure these are fish-safe and not too abrasive. You can also put in other fish-safe aquarium decor that strikes your fancy, as long as your axolotl still has space to walk around and swim.</p>
+        <p>While not required, many axolotls enjoy having a place to hide. Keep in mind, they don't stay tiny forever so it may be tricky to find a substantial hide. Often, simple log or tunnel design decor for large fish can work.</p>
+
+        <h4>Okay I have the stuff, now what? (Cycling)</h4>
+        <p>DO NOT JUST ADD YOUR AXOLOTL ON DAY ONE. All fish, axolotls included, eat and produce waste. This waste very quickly breaks down into ammonia, which is toxic. This ammonia then breaks down into nitrite, which is even more toxic! Thankfully, nitrites break down into nitrates, which are only dangerous in very high amounts. With a properly cycled tank, all of this happens very quickly thanks to good bacteria, and nitrates are removed during water changes. Without a properly cycled tank, however, the toxic ammonia and nitrite builds up very quickly, potentially killing your pet.</p>
+        <p>The good bacteria that breaks down waste quickly does not live in the water itself, but rather in the filter medium and on surfaces such as rocks and decor. This is why a filter is important! But how do you establish all this good bacteria?</p>
+        <p>Firstly, set up your tank. Fill it with water, put your filter and decorations in, and get everything up and running. After all, nothing is going to establish if it doesn't have a place to live. Then, for the next few weeks, "feed" your tank every few days. Buy fish flakes or even your axolotl's pellets and allow them to decompose in the tank. Remove old food every few days as well. This decomposition will start producing ammonia, which will "feed" the bacteria and allow them to establish.</p>
+        <p>During this phase, a water test kit is helpful. While not essential for taking care of an axolotl, a liquid aquarium test kit is very helpful in diagnosing issues and monitoring ammonia, nitrite and nitrate levels accurately. Plus they last seemingly forever. Testing the water levels weekly or so, you should be able to see a spike in ammonia, then later nitrite, then late nitrate. After this, it is safe to get your axolotl.</p>
+
+        <h3>Bringing your axolotl home</h3>
+        <p>Axolotls can be found online, or sometimes in small business pet stores. They are also sometimes kept as class pets, and sometimes they need to be rehomed (that's where I got all mine). The price ranges from free (rehome) up to $60 or even $80 for especially interesting morphs, but usually a wild type will cost around $30 plus shipping. Don't let that price fool you though, there's all that stuff I mentioned above too!</p>
+        <p>When you bring your axolotl home, it is important to let it adjust to the new water. Just plopping your axolotl in the tank could shock it from the temperature change, which is potentially dangerous. Let your axolotl float in the tank in the container it came in. 5-10 minutes later, add a little bit of aquarium water to the container or bag. Add a little more every 5-10 minutes until the container fills, then let the axolotl go. If the water is particularly dirty, don't add the water it came in. But if it is clean, it's okay.</p>
+
+        <h3>The first weeks</h3>
+        <p>While the tank may be cycled, the bacteria still may not be prepared to support a live animal. The first few weeks, it's very important to do FREQUENT water changes, removing 25-50% of the water to prevent toxins from building up. Again, a water test is helpful during this phase.</p>
+
+        <h3>Taking care of your axolotl</h3>
+        <h4>Getting to know your axolotl</h4>
+        <p>Axolotls may not be super intelligent, but they do each have unique personalities. They often appear "friendly," even though they likely just think you're food or are curious. Regardless, some owners insist their axolotl likes them or even recognizes them. Whether or not you choose to believe that is up to you.</p>
+        <p>When axolotls hit maturity (adulthood of sorts), you will be able to tell. You can tell when axolotls have hit this point by their toes. On light colored mature axolotls, like leustics, the tips of their toes will turn dark when they hit maturity. The opposite happens with darker axolotls like wild types, where their toe tips will turn light. Once this happens, you'll be able to tell if your axolotl is male or female, and your axolotls will be able to breed if you have a male and female together. At this point, your axolotl will also slow down it's growth. While they continue to grow slightly their whole lives much like sharks or snakes, this is the point where it becomes extremely gradual. They will grow even slower at lower temperatures.</p>
+        <p>Male axolotls tend to be leaner, while females tend to be more round. The easiest way to tell the difference, however, would be to look behind their hind legs at the base of their tail. Females will have a small bump or nub. This is the cloaca, which functions as both an axolotl's "rear end," and genitals. Males also have a cloaca, but theirs will be more swollen due to the testicles.</p>
+
+        <h4>Feeding your axolotl</h4>
+        <p>Axolotls are not smart, nor do they have amazing eyesight. They are, however, designed to eat live prey. Baby axolotls won't even eat anything if it's not moving!</p>
+        <p>Because very young axolotls need live prey, they often start with brine shrimp and later bloodworms. Adults can continue eating frozen bloodworms, but the ideal food for an axolotl as soon as they're big enough is earthworms. These can be purchased online or at most pet stores, especially the small business ones. You can also find them being sold as fishing bait. Worms are relatively easy to keep and breed if you don't want to keep buying them. Red wigglers, a commonly sold composting earthworm, will breed at room temperature if you provide space, soil, food (compost/fruit and vegetable scraps) and keep the soil slightly damp. Be warned, some axolotls refuse to eat red wigglers. This is due to a foul tasting substance these worms secrete when frightened, but all the axolotls I've seen don't have a problem.</p>
+        <p>To feed your axolotl earthworms, simply rinse or soak them first to remove the dirt and place it in your aquarium. You can simply drop it in, or dangle it at the surface of the water and let your axolotl come and eat it from your hand. Younger, smaller axolotls or extremely large nightcrawlers may require you to cut the worms into smaller pieces. This can be done with unwanted scissors or pet nail clippers. Remember, earthworms don't have a nervous system! They can't feel pain. Just remember to rinse the worms after cutting them.</p>
+        <p>Older juveniles and adults can also eat pellets. You can either get pellets made specifically for axolotls, or pellets made for carnivorous fish (such as pellets made for salmon or hikari brand carnivore pellets). The pellet should be relatively soft and sink to the bottom of the tank. Even if your axolotl eats pellets, it's still a good idea to offer an earthworm now and then as they are a healthier option.</p>
+        <p>Baby axolotls must be fed every day. As axolotls get older, they should eat every other day. Full grown adults eat every 2-3 days, or about 2-3 times a week. Adults can comfortably go a little over a week without food, though I wouldn't do that to them unless you have to.</p>
+        <p>You can tell if your axolotl is at a healthy weight by looking at it from above. The sides of its body should be about the same width as it's head. If needed, feed your axolotl slightly more or slightly less depending on if your axolotl is under or under weight.</p>
+
+        <h4>Keeping the aquarium clean</h4>
+        <p>Axolotl waste starts out as a small mound, but quickly breaks up into smaller particles. A turkey baster makes cleaning up easy. Waste that you can't see often builds up between decorations or rocks. If you see waste still in mound form, suck it up while you can! This will help keep the tank much cleaner. However, you only really NEED to suck up waste during water changes.</p>
+        <p>After the first few weeks, water changes only need to happen about once a week. Simply suck up about a gallon with your turkey baster, and replace it with fresh dechlorinated water. This is also a good time to use an unwanted toothbrush to wipe any algae off the sides of the tank, if needed.</p>
+        <p>Every few months, you'll want to clean the filter. A sponge filter can be cleaned by running it under the sink and squeezing it a few times, then putting it back.</p>
+
+        <h4>Keeping your tank cool</h4>
+        <p>As mentioned before, heat will stress your axolotl out! If you need to lower the temperature, point a fan at the surface of the water. This will help significantly. If this doesn't quite lower it enough, frozen water bottles can work in an emergency.</p>
+
+        <h4>Keeping your axolotl healthy and happy</h4>
+        <p>Unlike fish, who just die, axolotls will tell you they're stressed before they die, so keep your eyes out for the warning signs!</p>
+        <p>When upset, axolotls will curl their gills forward towards their nose. A very happy axolotl has relatively straight gills, while a super stressed one will have gills almost forming a circle. Axolotls curl their gills for a variety of reasons, and every axolotl will curl differently. Axolotls may curl for too much water movement, overheating, too much ammonia or nitrite, or another issue. Some axolotls will also curl if they're hungry, ate too much, or other minor things. Get to know your axolotl, and see what they curl for. Some are much more sensitive than others, and a curl doesn't always mean your axolotl is freaking out! But it is a good sign that, at the very least, they're a little grumpy about something.</p>
+        <p>Extremely stressed axolotls will curl the tip of their tail. This isn't a casual "oh my tail is bent," this is a tense, small curl. This, unlike curling, means that something is VERY wrong.</p>
+        <p>Signs of a sick axolotl include floating or lack of movement. Many axolotls, young ones and females especially, like to swallow air and float around a while. This is harmless, and they're just having fun. When it is a problem is when they can't get down. Likewise, many adults or a sleeping axolotl may spend a lot of time just sitting around at the bottom of the tank staring off into space sometimes. This isn't always a bad thing, just be aware of your axolotl's personality and what is unusual.</p>
+        <p>If an axolotl is sick, constipated, or otherwise not doing so well the go-to cure is to just pop them in the fridge. Make sure your fridge temperature is at least 40 degrees, then place them in a container that has enough room for them to completely stretch out and enough water to completely cover them. Then, just let them rest in the fridge for a few days or even a week or two. The low temperature slows down their metabolism, allowing their body to focus on getting better. Be sure to clean up after your axolotl. You can also still feed them, but less often. When you return your axolotl to their aquarium, let them adjust much like when you first brought it home.</p>
+
+        <p>To summarize:</p>
+        <ol>
+            <li>They live 100% underwater</li>
+            <li>10 or 20 gallons per axolotl</li>
+            <li>Cycle and dechlorinate your tank</li>
+            <li>Filter shouldn't move the water too much</li>
+            <li>Don't get gravel</li>
+            <li>They hate heat</li>
+            <li>Feed them every other day-ish</li>
+            <li>They eat worms or pellets</li>
+            <li>Clean the tank weekly</li>
+            <li>Fridge fixes everything</li>
+        </ol>
+
+
+
+
+
+
+
+
+
+    </div>
+
+</html>
+
+
+{% endblock  %}
