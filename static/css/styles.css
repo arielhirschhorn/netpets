@@ -215,3 +215,14 @@ body {
 	/* Set the fixed height of the footer here */
 	height: 60px;
 }
+
+.radio-class{
+	display: flex;
+	flex: 1 1 0;
+	flex-wrap: nowrap;
+	position: relative;
+}
+
+span {
+	float: left;
+}
