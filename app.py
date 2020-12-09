@@ -40,7 +40,7 @@ class Pets(db.Model):
     vaccinated = db.Column(db.Boolean, nullable = False) #0 = not 1 = is
     kidFriendly = db.Column(db.Boolean, nullable=False)
     petFriendly = db.Column(db.Boolean, nullable=False)
-    status = db.Column(db.Boolean, nullable = False) #0 = availible 1 = adopted
+    status = db.Column(db.Boolean, nullable = False) #1 = availible 0 = adopted
     description = db.Column(db.String, nullable=False)
     dateAdded = db.Column(db.Date, nullable = False)
     def __repr__(self):
@@ -334,7 +334,123 @@ def search_pets():
         pets = pets.filter(Pets.petFriendly==True)
 
     return render_template('petList.html', pets=pets)
-    
+
+@app.route('/dogs')
+def dogs():
+    pets = Pets.query.order_by(Pets.id).filter(Pets.species==0)
+    return render_template('petList.html', pets=pets)
+
+@app.route('/cats')
+def cats():
+    pets = Pets.query.order_by(Pets.id).filter(Pets.species==1)
+    return render_template('petList.html', pets=pets)
+
+@app.route('/smalls')
+def smalls():
+    pets = Pets.query.order_by(Pets.id).filter(Pets.species==2)
+    return render_template('petList.html', pets=pets)
+
+@app.route('/birds')
+def birds(): 
+    pets = Pets.query.order_by(Pets.id).filter(Pets.species==3)
+    return render_template('petList.html', pets=pets)
+
+@app.route('/reptiles')
+def reptiles(): 
+    pets = Pets.query.order_by(Pets.id).filter(Pets.species==4)
+    return render_template('petList.html', pets=pets)
+
+
+@app.route("/adopted", methods=["POST"])
+def adopted():
+    eyeD = request.form.get("eyeD")
+    pet = Pets.query.filter_by(id=eyeD).first()
+    pet.status = False;
+    db.session.commit()
+    return redirect("/petlist")
+
+@app.route("/delete", methods=["POST"])
+def delete():
+    eyeD = request.form.get("eyeD2")
+    pet = Pets.query.filter_by(id=eyeD).first()
+    db.session.delete(pet)
+    db.session.commit()
+    return redirect("/")
+
+@app.route("/update", methods=["POST"])
+def update():
+    eyeD = request.form.get("eyeD2")
+    pets = Pets.query.filter_by(id=eyeD).first()
+    return render_template('petupdate.html', pet=pets)
+
+@app.route("/updatepet", methods=["POST"])
+def updatePet():
+    print ("pls")
+    eyeD = request.form.get("eyeD2")
+    pet = Pets.query.filter_by(id=eyeD).first()
+    species = request.form['species']
+    if species == "0":
+        pet.species = 0
+    if species == "1":
+        pet.species = 1
+    if species == "2":
+        pet.species = 2
+    if species == "3":
+        pet.species = 3
+    if species == "4":
+        pet.species = 4
+    if species == "5":
+        pet.species = 5
+    if species == "6":
+        pet.species = 6
+    pet.name = request.form['petname']
+    pet.breed = request.form['breed']
+    age = request.form['age']
+    if age == "0":
+        pet.age = 0
+    if age == "1":
+        pet.age = 1
+    if age == "2":
+        pet.age = 2
+    if age == "3":
+        pet.age = 3
+    sex = request.form['sex']
+    if sex == "0":
+        pet.sex = 0
+    if sex == "1":
+        pet.sex = 1
+    if sex == "2":
+        pet.sex = 2
+    makeBabies = request.form['makeBabies']
+    if makeBabies == "True":
+        pet.makeBabies = True
+    if makeBabies == "False":
+        pet.makeBabies = False
+    vaccinated = request.form['vaccinated']
+    if vaccinated == "True":
+        pet.vaccinated = True
+    if vaccinated == "False":
+        pet.vaccinated = False
+    kidFriendly = request.form['kidFriendly']
+    if kidFriendly == "True":
+        pet.kidFriendly = True
+    if kidFriendly == "False":
+        pet.kidFriendly = False
+    petFriendly = request.form['petFriendly']
+    if petFriendly == "True":
+        pet.petFriendly = True
+    if petFriendly == "False":
+        pet.petFriendly = False
+    pet.description = request.form['description']
+    status = request.form['status']
+    if status == "True":
+        pet.status = True
+    if status == "False":
+        pet.status = False
+    db.session.commit()
+    return render_template('petview.html', pet=pet)
+
+
 @app.route('/petview')
 def viewpet():
     pet_id = request.args.get('id')
