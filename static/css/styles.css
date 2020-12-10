@@ -36,9 +36,11 @@ a:hover {
 	margin-top: 20px;
 	padding-left: 0;
 }
+
 .big-menu {
 	display: inline;
 }
+
 .small-menu {
 	display: none;
 }
@@ -87,15 +89,17 @@ a:hover {
 #small-plus {
 	display: none;
 }
+
 #big-plus {
 	display: inline;
 }
 
-#instructions ul{
+#instructions ul {
 	list-style: none;
 	padding-left: 0;
 	display: inline;
 }
+
 #instructions li {
 	width: 90%;
 	max-width: 600px;
@@ -108,21 +112,24 @@ a:hover {
 	background-color: #e3ede8;
 	border: 1px solid black;
 }
+
 #instructions img {
 	width: 100%;
 }
+
 #instructions button {
 	border-radius: 25px;
 }
-#instructions li:nth-child(odd) img{
+
+#instructions li:nth-child(odd) img {
 	grid-column-start: 1;
 	grid-column-end: 3;
 	grid-row-start: 1;
 	grid-row-end: 5;
 	border-radius: 25px 0px 0px 25px;
-} 
+}
 
-#instructions li:nth-child(odd) h3{
+#instructions li:nth-child(odd) h3 {
 	margin: 0;
 	margin-left: 20px;
 	grid-column-start: 3;
@@ -131,7 +138,7 @@ a:hover {
 	grid-row-end: 2;
 }
 
-#instructions li:nth-child(odd) p{
+#instructions li:nth-child(odd) p {
 	margin-left: 20px;
 	margin-top: 10px;
 	grid-column-start: 3;
@@ -140,7 +147,7 @@ a:hover {
 	grid-row-end: 5;
 }
 
-#instructions li:nth-child(odd) a{
+#instructions li:nth-child(odd) a {
 	grid-column-start: 7;
 	grid-column-end: 9;
 	grid-row-start: 4;
@@ -149,7 +156,7 @@ a:hover {
 	text-align: right;
 }
 
-#instructions li:nth-child(even) img{
+#instructions li:nth-child(even) img {
 	grid-column-start: 7;
 	grid-column-end: 9;
 	grid-row-start: 1;
@@ -157,7 +164,7 @@ a:hover {
 	border-radius: 0px 25px 25px 0px;
 }
 
-#instructions li:nth-child(even) h3{
+#instructions li:nth-child(even) h3 {
 	margin: 0;
 	text-align: right;
 	margin-right: 20px;
@@ -167,7 +174,7 @@ a:hover {
 	grid-row-end: 2;
 }
 
-#instructions li:nth-child(even) p{
+#instructions li:nth-child(even) p {
 	margin-right: 20px;
 	margin-top: 10px;
 	text-align: right;
@@ -177,7 +184,7 @@ a:hover {
 	grid-row-end: 5;
 }
 
-#instructions li:nth-child(even) a{
+#instructions li:nth-child(even) a {
 	grid-column-start: 1;
 	grid-column-end: 3;
 	grid-row-start: 4;
@@ -189,10 +196,11 @@ a:hover {
 	#image-header {
 		padding: 75px 0px;
 	}
+
 	#image-header h1 {
 		font-size: 25pt;
 	}
-	
+
 	#image-header a {
 		background-color: white;
 		font-size: 15pt;
@@ -205,7 +213,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 700px) {
-	#image-header h1{
+	#image-header h1 {
 		font-size: 25pt;
 		margin: 0 40px;
 	}
@@ -215,25 +223,31 @@ a:hover {
 	.big-menu {
 		display: none;
 	}
+
 	.small-menu {
 		display: inline;
 	}
+
 	#image-header {
 		padding: 5px 0px;
 	}
+
 	#image-header ul {
 		margin: 0 auto;
 	}
+
 	#image-header li {
 		display: block;
 		padding-left: 0;
 		margin-bottom: 10px;
 	}
+
 	#image-header a {
 		display: inline-block;
 		width: 80%;
 		margin-left: 0;
 	}
+
 	#previews ul {
 		padding-left: 0;
 	}
@@ -243,6 +257,7 @@ a:hover {
 	#instructions {
 		margin: 0 -15px;
 	}
+
 	#instructions li {
 		width: 100%;
 		margin-bottom: 0px;
@@ -269,10 +284,11 @@ a:hover {
 		border-radius: 10px;
 		margin: 0 auto;
 	}
-	
+
 	#small-plus {
 		display: inline;
 	}
+
 	#big-plus {
 		display: none;
 	}
@@ -293,7 +309,8 @@ a:hover {
 	border: 1px solid black;
 }
 
-#search select, #second-half label {
+#search select,
+#second-half label {
 	margin-right: 15px;
 }
 
@@ -334,7 +351,7 @@ a:hover {
 #pet-list li {
 	width: 25%;
 	display: inline-block;
-	
+
 }
 
 #pet-list a {
@@ -369,7 +386,7 @@ a:hover {
 	margin: 5px 0 0 0;
 }
 
-#pet-view{
+#pet-view {
 	width: 90%;
 	max-width: 900px;
 	margin: 0 auto;
@@ -388,25 +405,25 @@ em {
 	border-radius: 10px;
 }
 
-#pet-view .col-sm-4:nth-child(2){
+#pet-view .col-sm-4:nth-child(2) {
 	text-align: center;
 }
 
 #pet-view button {
 	float: right;
-	
+
 }
 
-.right{
+.right {
 	text-align: right;
 }
 
 body {
-	  min-height: 100vh;
-	  position: relative;
-	  margin: 0;
-	  padding-bottom: 100px;
-	  box-sizing: border-box;
+	min-height: 100vh;
+	position: relative;
+	margin: 0;
+	padding-bottom: 100px;
+	box-sizing: border-box;
 }
 
 .footer {
@@ -417,7 +434,7 @@ body {
 	height: 100px;
 }
 
-.radio-class{
+.radio-class {
 	display: flex;
 	flex: 1 1 0;
 	flex-wrap: nowrap;
