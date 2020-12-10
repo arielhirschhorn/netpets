@@ -11,16 +11,13 @@
       </div>
 </div>
 <body>
-    
+    <h1> Update a pet: </h1>
     <form method="POST" name="form" action="/updatepet" enctype="multipart/form-data">
 
         <p><input type= "text" name="petname" value="{{pet.name}}"></p>
         <label for="petname">Pet name</label>
 
-<div class = "row">
-
-    <div class = "col-sm">
-        {% if pet.species==0 %}
+      {% if pet.species==0 %}
       <p><input type="radio" id="dog" name="species" value="0" checked></p>
       <label for="dog">Dog</label>
       <p><input type="radio" id="cat" name="species" value="1"></p>
@@ -127,10 +124,6 @@
       <label for="other">Other</label>
       {% endif %}
 
-    </div>
-
-</div>        
-      
       <p><input type= "text" name="breed" value="{{pet.breed}}"></p>
       <label for="breed">Pet breed</label>
 

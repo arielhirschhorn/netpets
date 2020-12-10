@@ -12,48 +12,55 @@
 </head>
 
 <body>
-	<div id="pet-view">
-		<br>
-		<br>
-		<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}" class="col-sm-6">
-		<div class="col-sm-6">
+	<section id="pet-view">
+		<div class="row">
 			<br>
 			<br>
 			<br>
-			<h1> My name is {{pet.name}}! </h1>
-			{% set species = ["dog", "cat", "small mammal", "bird", "reptile", "fish", "other"] %}
-			{% set age = ["baby", "young adult", "adult", "elder"] %}
-			{% set sex = ["male", "female", "sex unknown"] %}
-			<p> {{pet.name}} </p>
-			<p> {{species[pet.species]}} </p>
-			<p> {{pet.breed}} </p>
-			<p> {{age[pet.age]}} </p>
-			<p> {{sex[pet.sex]}} </p>
-			<p> Date added: {{pet.dateAdded}}</p>
-			<p> Availible: {{pet.status}}</p>
-			<p> Spayed/Neutered: {{pet.makeBabies}} </p>
-			<p> Up-to-date vaccinations: {{pet.vaccinated}} </p>
-			<p> {{pet.description}} </p>
-			{% if current_user.admin==True %}
+			<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}" class="col-sm-6">
+			<div class="col-sm-6">
+				<br>
+				<br>
+				<br>
+				{% set species = ["dog", "cat", "small mammal", "bird", "reptile", "fish", "other"] %}
+				{% set age = ["Baby", "Young Adult", "Adult", "Elder"] %}
+				{% set sex = ["Male", "Female", "Unknown"] %}
+				<h1> My name is {{pet.name}}! </h1>
+				<div class="row">
+					{% if (pet.species < 2) %}
+						<p class="col-sm-4"> <em> Breed: </em> {{pet.breed}} </p>
+					{% else %}
+						<p class="col-sm-4"> <em> Species: </em> {{pet.breed}}</p>
+					{% endif %}
+					<p class="col-sm-4"> <em> Age: </em> {{age[pet.age]}} </p>
+					<p class="col-sm-4 right"> <em> Sex: </em> {{sex[pet.sex]}}</p>
+				</div>
+				<div class="row">
+					<p class="col-sm-6"> <em> Spayed/Neutered: </em> {{pet.makeBabies}} </p>
+					<p class="col-sm-6 right"> <em> Vaccinated: </em> {{pet.vaccinated}} </p>
+				</div>
+				<p> {{pet.description}} </p>
+				{% if current_user.admin==True %}
 			<p></p>
 			<p></p>
 			<p></p>
 			<p></p>
-			<form method="POST" action="./adopted">
+			<form method="POST" action="./adopted" >
    		 	<input type="hidden" value="{{pet.id}}" name="eyeD">
-   			<input type="submit" value="Mark as adopted">
+   			<input type="submit" value="Mark as adopted" class = "btn btn-primary">
    			</form>
-   			<form method="POST" action="./delete">
+   			<form method="POST" action="./delete" >
    		 	<input type="hidden" value="{{pet.id}}" name="eyeD2">
-   			<input type="submit" value="Delete this pet">
+   			<input type="submit" value="Delete this pet" class = "btn btn-primary">
   			</form>
-  			<form method="POST" action="./update">
+  			<form method="POST" action="./update" >
    		 	<input type="hidden" value="{{pet.id}}" name="eyeD2">
-   			<input type="submit" value="Update pet info">
+   			<input type="submit" value="Update pet info" class = "btn btn-primary">
   			</form>
   			{% endif %}
+			</div>
 		</div>
-	</div>
+	</section>
 </body>
 </html>
 	
