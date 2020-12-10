@@ -6,70 +6,71 @@
 {% block page_content %}
 
 <body>
-	<section id="image-header">
-		<h1> Improve your life - find your perfect pet. </h1>
-		<ul>
-			<li><a href="/petlist"> Dogs </a></li>
-			<li><a href="/petlist"> Cats </a></li>
-			<li><a href="/petlist"> Birds </a></li>
-			<li><a href="/petlist"> Fish </a></li>
-			<li><a href="/petlist"> Lizards </a></li>
-		</ul>
-	</section>
-	<section id="previews">
-		<h2> {{petcount}}+ Pets In Need of Adoption: </h2>
-		<ul>
-			{% for pet in previews %}
-			<li>
-				<a href="/petview?id={{pet.id}}"> <img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}"> </a>
-			</li>
-			{% endfor %}
-			<li> <a href="/petlist"> + </a> </li>
-			
-		</ul>
-	</section>
-	<section id="instructions">
-		<h2> Planning to Adopt? </h2>
-		<ul>
-			<li>
-				<img src="/static/site-images/placeholder-square.webp">
-				<h3> General Adoption Checklist </h3>
-				<p> A short description of what this page is! </p>
-				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
-			</li>
-			<li>
-				<img src="/static/site-images/placeholder-square.webp">
-				<h3> Dog Care Guide </h3>
-				<p> A short description of what this page is! </p>
-				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
-			</li>
-			<li>
-				<img src="/static/site-images/placeholder-square.webp">
-				<h3> Cat Care Guide </h3>
-				<p> A short description of what this page is! </p>
-				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
-			</li>
-			<li>
-				<img src="/static/site-images/placeholder-square.webp">
-				<h3> Bird Care Guide </h3>
-				<p> A short description of what this page is! </p>
-				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
-			</li>
-			<li>
-				<img src="/static/site-images/placeholder-square.webp">
-				<h3> Fish Care Guide </h3>
-				<p> A short description of what this page is! </p>
-				<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
-			</li>
-			<li>
-				<img src="/static/site-images/placeholder-square.webp">
-				<h3> Lizard Care Guide </h3>
-				<p> A short description of what this page is! </p>
-				<a href="/"> <button class="btn btn-primary"> Learn More </button> </a>
-			</li>
-		</ul>
-	</section>
-	
+	<div class="center-page">
+		<section id="image-header">
+			<h1> Improve your life - find your perfect pet. </h1>
+			<ul>
+				<li><a href="/dogs"> <div class="big-menu">Dogs</div> <div class="small-menu"> I want a dog </div></a></li>
+				<li><a href="/cats"> <div class="big-menu">Cats</div> <div class="small-menu"> I want a cat </div> </a></li>
+				<li><a href="/smalls"> <div class="big-menu">Small Mammals</div> <div class="small-menu"> I want a small mammal </div> </a></li>
+				<li><a href="/birds"> <div class="big-menu">Birds</div> <div class="small-menu"> I want a bird </div> </a></li>
+				<li><a href="/reptiles"> <div class="big-menu">Reptiles</div> <div class="small-menu"> I want a reptile </div> </a></li>
+			</ul>
+		</section>
+		<section id="previews">
+			<h2> {{petcount}}+ Pets In Need of Adoption: </h2>
+			<ul>
+				{% for pet in previews %}
+				<li>
+					<a href="/petview?id={{pet.id}}"> <img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}"> </a>
+				</li>
+				{% endfor %}
+				<li> <a href="/petlist"> <div id="big-plus">+</div> <div id="small-plus">See More</div> </a> </li>
+				
+			</ul>
+		</section>
+		<section id="instructions">
+			<h2> Planning to Adopt? </h2>
+			<ul>
+				<li>
+					<img src="/static/site-images/checklist.png">
+					<h3> General Adoption Checklist </h3>
+					<p> A short description of what this page is! </p>
+					<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
+				</li>
+				<li>
+					<img src="/static/site-images/dog-care.png">
+					<h3> Dog Care Guide </h3>
+					<p> A short description of what this page is! </p>
+					<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
+				</li>
+				<li>
+					<img src="/static/site-images/cat-care.png">
+					<h3> Cat Care Guide </h3>
+					<p> A short description of what this page is! </p>
+					<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
+				</li>
+				<li>
+					<img src="/static/site-images/small-care.png">
+					<h3> Small Mammal Care Guide </h3>
+					<p> A short description of what this page is! </p>
+					<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
+				</li>
+				<li>
+					<img src="/static/site-images/bird-care.png">
+					<h3> Bird Care Guide </h3>
+					<p> A short description of what this page is! </p>
+					<a href="/"> <button class="btn btn-primary"> Learn More </button>  </a>
+				</li>
+				<li>
+					<img src="/static/site-images/reptile-care.png">
+					<h3> Reptile Care Guide </h3>
+					<p> A short description of what this page is! </p>
+					<a href="/"> <button class="btn btn-primary"> Learn More </button> </a>
+				</li>
+			</ul>
+		</section>
+	</div>
 </body>
 </html>
 	

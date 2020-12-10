@@ -12,24 +12,32 @@
 </head>
 
 <body>
-	<div id="pet-view">
-		<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}" class="col-sm-6">
-		<div class="col-sm-6">
-			<h1> My name is {{pet.name}}! </h1>
-			{% set species = ["dog", "cat", "small mammal", "bird", "reptile", "fish", "other"] %}
-			{% set age = ["baby", "young adult", "adult", "elder"] %}
-			{% set sex = ["male", "female", "sex unknown"] %}
-			<p> {{pet.name}} </p>
-			<p> {{species[pet.species]}} </p>
-			<p> {{pet.breed}} </p>
-			<p> {{age[pet.age]}} </p>
-			<p> {{sex[pet.sex]}} </p>
-		
-			<p> Spayed/Neutered: {{pet.makeBabies}} </p>
-			<p> Up-to-date vaccinations: {{pet.vaccinated}} </p>
-			<p> {{pet.description}} </p>
+	<section id="pet-view">
+		<div class="row">
+			<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}" class="col-sm-6">
+			<div class="col-sm-6">
+				{% set species = ["dog", "cat", "small mammal", "bird", "reptile", "fish", "other"] %}
+				{% set age = ["Baby", "Young Adult", "Adult", "Elder"] %}
+				{% set sex = ["Male", "Female", "Unknown"] %}
+				<h1> My name is {{pet.name}}! </h1>
+				<div class="row">
+					{% if (pet.species < 2) %}
+						<p class="col-sm-4"> <em> Breed: </em> {{pet.breed}} </p>
+					{% else %}
+						<p class="col-sm-4"> <em> Species: </em> {{pet.breed}}</p>
+					{% endif %}
+					<p class="col-sm-4"> <em> Age: </em> {{age[pet.age]}} </p>
+					<p class="col-sm-4 right"> <em> Sex: </em> {{sex[pet.sex]}}</p>
+				</div>
+				<div class="row">
+					<p class="col-sm-6"> <em> Spayed/Neutered: </em> {{pet.makeBabies}} </p>
+					<p class="col-sm-6 right"> <em> Vaccinated: </em> {{pet.vaccinated}} </p>
+				</div>
+				<p> {{pet.description}} </p>
+				<button class="btn btn-primary"> Adopt me! </button>
+			</div>
 		</div>
-	</div>
+	</section>
 </body>
 </html>
 	
