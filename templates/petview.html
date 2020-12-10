@@ -13,8 +13,13 @@
 
 <body>
 	<div id="pet-view">
+		<br>
+		<br>
 		<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}" class="col-sm-6">
 		<div class="col-sm-6">
+			<br>
+			<br>
+			<br>
 			<h1> My name is {{pet.name}}! </h1>
 			{% set species = ["dog", "cat", "small mammal", "bird", "reptile", "fish", "other"] %}
 			{% set age = ["baby", "young adult", "adult", "elder"] %}
@@ -24,10 +29,29 @@
 			<p> {{pet.breed}} </p>
 			<p> {{age[pet.age]}} </p>
 			<p> {{sex[pet.sex]}} </p>
-		
+			<p> Date added: {{pet.dateAdded}}</p>
+			<p> Availible: {{pet.status}}</p>
 			<p> Spayed/Neutered: {{pet.makeBabies}} </p>
 			<p> Up-to-date vaccinations: {{pet.vaccinated}} </p>
 			<p> {{pet.description}} </p>
+			{% if current_user.admin==True %}
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<form method="POST" action="./adopted">
+   		 	<input type="hidden" value="{{pet.id}}" name="eyeD">
+   			<input type="submit" value="Mark as adopted">
+   			</form>
+   			<form method="POST" action="./delete">
+   		 	<input type="hidden" value="{{pet.id}}" name="eyeD2">
+   			<input type="submit" value="Delete this pet">
+  			</form>
+  			<form method="POST" action="./update">
+   		 	<input type="hidden" value="{{pet.id}}" name="eyeD2">
+   			<input type="submit" value="Update pet info">
+  			</form>
+  			{% endif %}
 		</div>
 	</div>
 </body>

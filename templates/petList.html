@@ -20,11 +20,14 @@
 	<form method="POST" name="form" action="" enctype="multipart/form-data">
 		<label for="species"> Species: </label>
 		<select name="species">
+			<option value="any"> All </option>
 			<option value="dog"> Dog </option>
 			<option value="cat"> Cat </option>
+			<option value="small"> Small Mamamal </option>
 			<option value="bird"> Bird </option>
-			<option value="Fish"> Fish </option>
-			<option value="Lizard"> Lizard </option>
+			<option value="reptile"> Reptile </option>
+			<option value="fish"> Fish </option>
+			<option value="other"> Other </option>
 		</select>
 		<label for="age"> Age: </label>
 		<select name="age">
@@ -34,10 +37,12 @@
 			<option value="adult"> Adult </option>
 			<option value="old"> Old </option>
 		</select>
-		<input type="checkbox" name="male">
-		<label for="male"> Male </label>
-		<input type="checkbox" name="female">
-		<label for="child"> Female </label>
+		<label for="sex"> Sex: </label>
+		<select name="sex">
+			<option value="unknown"> Any </option>
+			<option value="m"> Male </option>
+			<option value="f"> Female </option>
+		</select>
 		<input type="checkbox" name="child">
 		<label for="child"> Child Friendly Required </label>
 		<input type="checkbox" name="other-pet">
