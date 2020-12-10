@@ -295,7 +295,15 @@ def upload_file():
 
 @app.route('/petlist')
 def petlist():
-    pets = Pets.query.order_by(Pets.id)
+    species = "any"
+    age = "any"
+    sex = "any"
+    children = "off"
+    otherPet = "off"
+    otherPet = "off"
+    if (request.args.get('species')): 
+        species = request.args.get('species')
+    pets = search(species, age, sex, children, otherPet)
     return render_template('petList.html', pets=pets)
 
 @app.route('/petlist', methods=['GET','POST'])
@@ -305,8 +313,12 @@ def search_pets():
     sex = request.form['sex']
     children = request.form.get('child')
     otherPet = request.form.get('other-pet')
+    pets = search(species, age, sex, children, otherPet)
+
+    return render_template('petList.html', pets=pets)
+
+def search(species, age, sex, children, otherPet):
     pets = Pets.query.order_by(Pets.id)
-    
     if species == "dog":
         pets = pets.filter(Pets.species==0)
     elif species == "cat":
@@ -319,7 +331,7 @@ def search_pets():
         pets = pets.filter(Pets.species==4)
     elif species == "fish":
         pets = pets.filter(Pets.species==5)
-    elif species == "fish":
+    elif species == "other":
         pets = pets.filter(Pets.species==6)
 
     if age == "baby":
@@ -340,33 +352,26 @@ def search_pets():
         pets = pets.filter(Pets.kidFriendly==True)
     if otherPet == "on":
         pets = pets.filter(Pets.petFriendly==True)
-
-    return render_template('petList.html', pets=pets)
-
+    return pets
 @app.route('/dogs')
 def dogs():
-    pets = Pets.query.order_by(Pets.id).filter(Pets.species==0)
-    return render_template('petList.html', pets=pets)
+    return redirect('/petlist?species=dog')
 
 @app.route('/cats')
 def cats():
-    pets = Pets.query.order_by(Pets.id).filter(Pets.species==1)
-    return render_template('petList.html', pets=pets)
+    return redirect('/petlist?species=cat')
 
 @app.route('/smalls')
 def smalls():
-    pets = Pets.query.order_by(Pets.id).filter(Pets.species==2)
-    return render_template('petList.html', pets=pets)
+    return redirect('/petlist?species=small')
 
 @app.route('/birds')
 def birds(): 
-    pets = Pets.query.order_by(Pets.id).filter(Pets.species==3)
-    return render_template('petList.html', pets=pets)
+    return redirect('/petlist?species=bird')
 
 @app.route('/reptiles')
 def reptiles(): 
-    pets = Pets.query.order_by(Pets.id).filter(Pets.species==4)
-    return render_template('petList.html', pets=pets)
+    return redirect('/petlist?species=reptile')
 
 
 @app.route("/adopted", methods=["POST"])
