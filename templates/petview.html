@@ -14,8 +14,14 @@
 <body>
 	<section id="pet-view">
 		<div class="row">
+			<br>
+			<br>
+			<br>
 			<img src="{{ url_for('static', filename = 'uploads/'+pet.filename) }}" class="col-sm-6">
 			<div class="col-sm-6">
+				<br>
+				<br>
+				<br>
 				{% set species = ["dog", "cat", "small mammal", "bird", "reptile", "fish", "other"] %}
 				{% set age = ["Baby", "Young Adult", "Adult", "Elder"] %}
 				{% set sex = ["Male", "Female", "Unknown"] %}
@@ -34,7 +40,24 @@
 					<p class="col-sm-6 right"> <em> Vaccinated: </em> {{pet.vaccinated}} </p>
 				</div>
 				<p> {{pet.description}} </p>
-				<button class="btn btn-primary"> Adopt me! </button>
+				{% if current_user.admin==True %}
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<form method="POST" action="./adopted" >
+   		 	<input type="hidden" value="{{pet.id}}" name="eyeD">
+   			<input type="submit" value="Mark as adopted" class = "btn btn-primary">
+   			</form>
+   			<form method="POST" action="./delete" >
+   		 	<input type="hidden" value="{{pet.id}}" name="eyeD2">
+   			<input type="submit" value="Delete this pet" class = "btn btn-primary">
+  			</form>
+  			<form method="POST" action="./update" >
+   		 	<input type="hidden" value="{{pet.id}}" name="eyeD2">
+   			<input type="submit" value="Update pet info" class = "btn btn-primary">
+  			</form>
+  			{% endif %}
 			</div>
 		</div>
 	</section>
